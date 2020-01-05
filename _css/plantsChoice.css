@@ -1,0 +1,62 @@
+@charset "UTF-8";
+
+/*Import of Google Founts*/
+
+/*Bold*/
+@import url('https://fonts.googleapis.com/css?family=Montserrat:800&display=swap');
+
+body {
+	background-color: rgb(245,245,245); /*Background Gray*/
+	font-family: 'Montserrat', sans-serif;
+}
+
+/*Labels*/
+p#text{
+	/* Our picks for you */
+	position: absolute;
+	width: 598px;
+	height: 79px;
+	left: 421px;
+	top: 150px;
+
+	font-family: Montserrat;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 65px;
+	line-height: 79px;
+	text-align: center;
+
+	color: #0C261C;
+}
+
+/*Pictures*/
+img#logo
+{
+	position: absolute;
+	height: 200px;
+	width: 200px;
+	transform: rotate(-90deg);
+	left: 81px;
+	top: 61px;
+}
+
+img#backPicture /*Pics*/
+{
+
+	position: absolute;
+	width: 226px;
+	height: 112px;
+	left: 607px;
+	top: 69px;
+}
+
+
+/*Other Elements*/
+
+/*Line*/
+hr#line{
+	position: absolute;
+	height: 1209px;
+	left: 180px;
+	top: 280px;
+}

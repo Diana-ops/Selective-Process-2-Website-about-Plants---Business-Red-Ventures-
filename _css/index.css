@@ -1,0 +1,74 @@
+@charset "UTF-8";
+
+/*Import of Google Founts*/
+
+/*Bold*/
+@import url('https://fonts.googleapis.com/css?family=Montserrat:800&display=swap');
+
+/*Light*/
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400&display=swap');
+
+body {
+	background-color: rgb(245,245,245); /*Background Gray*/
+	font-family: 'Montserrat', sans-serif;
+}
+
+/*Labels*/
+h1{
+	position: absolute;
+	font-size: 55px;
+	left: 175px;
+	top: 183px;
+	font-family: Montserrat;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 66px;
+	line-height: 80px;
+}
+
+/*Buttons*/
+button
+{
+	position: absolute;
+	top: 500px;
+	left: 175px;
+	background-color: #15573F;
+	color: white;
+	border: none;
+	padding: 15px;
+	text-align: center;
+	width: 170px;
+	height: 50px;
+	border-radius: 25px;
+	font-family: 'Montserrat', sans-serif;
+}
+
+.arrow{ /*Arrow inside of button*/
+	position: absolute;
+	color: white;
+	left: 200px;
+	top: 513px;
+}
+
+
+
+/*Pictures*/
+
+/* logo */
+img#logo
+{
+	position: absolute;
+	width: 208px;
+	height: 25px;
+	left: 174px;
+	top: 62px;
+}
+
+img#backPicture
+{
+	position: absolute;
+	width: 779px;
+	height: 738px;
+	left: 524px;
+	top: 29px;
+}
