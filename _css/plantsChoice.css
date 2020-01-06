@@ -2,8 +2,11 @@
 
 /*Import of Google Founts*/
 
-/*Bold*/
-@import url('https://fonts.googleapis.com/css?family=Montserrat:800&display=swap');
+/*Bold
+@import url('https://fonts.googleapis.com/css?family=Montserrat:800&display=swap');*/
+
+/*Light*/
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300&display=swap');
 
 body {
 	background-color: rgb(245,245,245); /*Background Gray*/
