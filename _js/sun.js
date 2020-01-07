@@ -1,6 +1,4 @@
 
-//When mouse over div with cards
-
 //Select the Cards
 var captureFCards = document.querySelector("div#firstChoice");
 var captureSCards = document.querySelector("div#secondChoice");

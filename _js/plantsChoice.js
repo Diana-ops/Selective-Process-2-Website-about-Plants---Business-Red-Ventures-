@@ -1,53 +1,31 @@
-//Request of type GET with Axios
-
-function styleText(){
-	paragraph.style.color = "#15573F";
-	paragraph.style.fontFamily = "Montserrat";
-	paragraph.style.fontStyle = "normal";
-	paragraph.style.fontWeight = "100";
-	paragraph.style.fontStyle = "normal";
-	paragraph.style.fontWeight = "300";
-	paragraph.style.fontSize = "16px";
-	paragraph.style.lineHeight = "20px";
-	paragraph.style.textAlign = "center";
-	paragraph.style.marginTop = "15";
-	paragraph.style.marginLeft = "5";
-}
-
-function styleDiv(){
-	//Defining a style of the element of Div 
-	newSquare.style.height = heightDiv.toString(); /*Altura*/
-	newSquare.style.width = widthDiv.toString(); /*Largura*/
-	newSquare.style.backgroundColor = "white";
-}
-
-function styleButton(){
-	newButton.style.height = heightDiv - (292);
-	newButton.style.width = widthDiv - (55);
-	newButton.style.backgroundColor = "white";
-	newButton.style.border = "0.8px solid #15573F";
-	newButton.style.borderRadius = "25px";
-	newButton.style.position = "relative";
-}
-
+//Positions of the cards
 var positionTop = ["386", "-342", "-342", "53", "-342", "-342", "53", "-342", "-342"];
 var positionLeft = ["288", "609", "930","288", "609", "930","288", "609", "930"];
 
 var heightDiv = 341;
 var widthDiv = 268;
 
+//Create the cards 
 for(var i = 0;  i < positionTop.length; i++){
 
 	//Create a new div 
 	var newSquare = document.createElement("div");
 
+	//Declating a id for div create 
+	$(newSquare).attr('id', 'divNumer'+i.toString());
+
 	//Creat a new button 
 	var newButton = document.createElement("button");
 
+	//Declating a id for button create 
+	$(newButton).attr('id', 'buttonNumer'+i.toString());
+
 	//As the "createTextNode" don't accept css properties, I had to create a element <p> for insert the text
 	var paragraph = document.createElement("p"); 
-	var buttonText = document.createTextNode("buy now");
+	paragraph.innerHTML = "buy now";
 
+	//Declating a id for p create 
+	$(paragraph).attr('id', 'pNumer'+i.toString());
 
 	//Defining the positions of elements
 	newSquare.style.marginTop  = positionTop[i];
@@ -59,7 +37,6 @@ for(var i = 0;  i < positionTop.length; i++){
 	document.getElementById("main").appendChild(newSquare);
 	newSquare.appendChild(newButton); //Puting the button inside of div
 	newButton.appendChild(paragraph); //Puting the text inside of button
-	paragraph.appendChild(buttonText);
 
 	styleText();
 	styleDiv();
@@ -67,52 +44,133 @@ for(var i = 0;  i < positionTop.length; i++){
 	
 }
 
-//When on mouse for some card 
-var inputs = document.querySelectorAll("div#main div"); //Request all divs inside div#main 
-var id = 1;
 
-inputs.forEach(function(input) {
+var allDivs = document.querySelectorAll("div#main div"); //Request all divs inside div#main 
+
+allDivs.forEach(function(input) {
+
   input.addEventListener('mouseover', function hover() {
-    input.style.boxShadow = "0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)"; //The shadow will be put for him
+    
+   	var id = (this.id).toString()[((this.id).length)-1];
+	var but = document.getElementById("buttonNumer"+id); //Select the id of button respective to your div
+	var p = document.getElementById("pNumer"+id); //Request the text inside the button
+
+	//When mouse over div 
+	input.style.boxShadow = "0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)"; 
+	but.style.transitionDuration = "0.5s";
+	but.style.backgroundColor = "#15573F";
+	p.style.color = "white";
+
 
   });
 
   input.addEventListener('mouseleave', function leave() {
-    input.style.boxShadow = "none"; //The shadow will be hidden
 
+  	var id = (this.id).toString()[((this.id).length)-1];
+	var but = document.getElementById("buttonNumer"+id);
+	var p = document.getElementById("pNumer"+id); //Request the text inside the button 
+	 
+	//When mouse leave div
+    input.style.boxShadow = "none"; 
+    but.style.backgroundColor = "white";
+    but.style.transitionDuration = "0.5s";
+    p.style.color = "#15573F";
+	
   });
 
   	
 });
 
-//When on mouse for some button 
-var buttons = document.querySelectorAll("div#main div button"); //Request all divs inside div#main 
+//Migrate to next page when some button will be click 
 
-buttons.forEach(function(button) {
-	button.addEventListener('mouseover', function hover() {
-		    button.style.backgroundColor = "#15573F";
-		    button.style.transitionDuration = "0.5s";
+var allButtons = document.querySelectorAll("div#main button");
+
+allButtons.forEach(function(button) {
+
+	button.addEventListener('click', function() {
+		document.location.href = "sendDatas.html";
 	});
 
-	button.addEventListener('mouseleave', function leave() {
-		    button.style.backgroundColor = "white";
-		    button.style.transitionDuration = "0.5s";
-
-	});
 });
 
-  	//Request the informations about the plants for putting into each div
-		axios.get("https://6nrr6n9l50.execute-api.us-east-1.amazonaws.com/default/front-plantTest-service/plant?id=3")
+
+for(var id = 1; id < 10; id++){
+  	
+  		var c = 0; //This variable go to sweep all divs 
+
+  		//Request the informations about the plants for putting into each div
+		axios.get("https://6nrr6n9l50.execute-api.us-east-1.amazonaws.com/default/front-plantTest-service/plant?id="+id.toString())
 			.then(function(response) { 
 
-				var newName = document.createTextNode(response.data.name);
-				input.appendChild(newName);
+				// Get a div 
+				var div = document.getElementById('divNumer'+(c).toString());
 
-				//(id < 10) ? id++ : id = 1;
-					id++;
+				c++;
+
+				//Get a name of plant 
+				var nameP = document.createElement("p"); 
+				nameP.innerHTML = response.data.name;
+
+				div.appendChild(nameP);
+
+				//Call function for style name 
+				styleNamePlant(nameP);
+
+				//Get a price of plant 
+				var priceP = document.createElement("p"); 
+				priceP.innerHTML = "$"+response.data.price;
+
+				div.appendChild(priceP);
+
+				stylePricePlant(priceP);
+
+
+				//Get a image request and create your element 
+				var image = document.createElement("img");
+				image.src = response.data.url;
+				div.appendChild(image); 
+
+				//Call function for style image 
+				styleImagePlant(image);
+
+				//Get a information about sun  
+
+				var imageSun = document.createElement("img");
+				var imageWater = document.createElement("img");
+
+				var caseSun = ["no", "low", "high"];
+				var caseWater = ["daily", "regularly", "rarely"];
+
+				for(var s = 0; s < caseSun.length; s++){
+					if(response.data.sun == caseSun[s]){ 
+						imageSun.src = ("../assets/icons/grey/"+caseSun[s]+".svg");
+					}
+				}
+
+				for(var s = 0; s < caseWater.length; s++){
+					if(response.data.water == caseWater[s]){ 
+						imageWater.src = ("../assets/icons/grey/"+caseWater[s]+".svg");
+					}
+				}
+
+				if(response.data.toxicity == true){ 
+					var imagePet = document.createElement("img");
+					imagePet.src = ("../assets/icons/grey/true.svg");
+					div.appendChild(imagePet); 
+					styleImagePet(imagePet);
+				}
+				
+
+				div.appendChild(imageSun); 
+				div.appendChild(imageWater); 
+
+				styleImageSun(imageSun);
+				styleImageWater(imageWater);
+
 			})
 
 			//If an error happen, other thing happen
 			.catch(function(error) {
 				console.warn(error);
 			});
+}
