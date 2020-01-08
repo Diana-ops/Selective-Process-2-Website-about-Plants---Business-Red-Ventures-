@@ -119,3 +119,34 @@ function styleTextPet(pPet){
 	pPet.style.color = "#6E6E6E";
 
 }
+
+/*Div form*/
+
+function styleMsg(msg){
+	msg.style.position = "absolute";
+	msg.style.width = "218px";
+	msg.style.height = "27px";
+	msg.style.marginLeft = "80px";
+	msg.style.marginTop = "380px";
+
+	msg.style.fontFamily = "Montserrat";
+	msg.style.fontStyle = "normal";
+	msg.style.fontWeight = "300";
+	msg.style.fontSize = "15px";
+	msg.style.lineHeight = "27px";
+
+	msg.style.color = "#F71D1D";
+}
+
+function styleCircle(circle){
+	circle.style.position = "absolute"
+	circle.style.borderRadius = "50%";
+	circle.style.background = "red";
+	circle.style.height = "19px";
+	circle.style.width = "19px";
+	circle.style.marginLeft = "50px";
+	circle.style.marginTop = "383px";
+
+	circle.style.color = "white";
+	circle.style.textAlign = "center"; 
+}

@@ -91,40 +91,34 @@ axios.get("https://6nrr6n9l50.execute-api.us-east-1.amazonaws.com/default/front-
 		console.warn(error);
 	});
 
-function styleMsg(msg){
-	msg.style.position = "absolute";
-	msg.style.width = "218px";
-	msg.style.height = "27px";
-	msg.style.marginLeft = "80px";
-	msg.style.marginTop = "380px";
+//Validate user name
+function valideName(nameUser){
+	if(nameUser.length == 0){ 
+		var name = document.querySelector("p#name");
+		name.style.color = "red";
 
-	msg.style.fontFamily = "Montserrat";
-	msg.style.fontStyle = "normal";
-	msg.style.fontWeight = "300";
-	msg.style.fontSize = "15px";
-	msg.style.lineHeight = "27px";
+		//Change color of border input 
+		var boxName = document.querySelector("input#name");
+		boxName.style.border = "0.8px solid red";
+		boxName.value = " ";
 
-	msg.style.color = "#F71D1D";
+		return false; 
+
+	} else {
+		var name = document.querySelector("p#name");
+		name.style.color = "#6E6E6E";
+
+		var boxName = document.querySelector("input#name");
+		boxName.style.border = "none";
+
+		return true; 
+
+	}
 }
 
-function styleCircle(circle){
-	circle.style.position = "absolute"
-	circle.style.borderRadius = "50%";
-	circle.style.background = "red";
-	circle.style.height = "19px";
-	circle.style.width = "19px";
-	circle.style.marginLeft = "50px";
-	circle.style.marginTop = "383px";
+//Validate user email
+function valideEmail(emailUser){
 
-	circle.style.color = "white";
-	circle.style.textAlign = "center"; 
-}
-
-//Get the value of email inserted of user
-function sendDadas() {
-    var emailUser = document.querySelector("input#email").value;
-    
-    //Validate user email
     function validateEmail(email) {
 	  var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 	  return re.test(email);
@@ -132,7 +126,7 @@ function sendDadas() {
 	}
 	if(validateEmail(emailUser) == false){
 
-		//Change name
+		//Change color email 
 		var email = document.querySelector("p#email");
 		email.style.color = "red";
 
@@ -148,14 +142,77 @@ function sendDadas() {
 
 		//Show mensage 
 		var msg = document.createElement("p"); 
+		//Declating a id for div create 
+		$(msg).attr('id', 'msgId');
 		msg.innerHTML = "Please provide a valid e-mail."; 
 		document.getElementById("from").appendChild(msg);
 		styleMsg(msg);
 
 		//Symbol
 		var circle = document.createElement("div");
+		//Declating a id for div create 
+		$(circle).attr('id', 'circleId');
 		document.getElementById("from").appendChild(circle);
 		circle.innerHTML = "!";
 		styleCircle(circle);
+
+		return false;
+
+	} else if(validateEmail(emailUser) == true){
+
+		var email = document.querySelector("p#email");
+		email.style.color = "#6E6E6E";
+
+		var box = document.querySelector("input#email");
+		box.style.border = "none";
+
+		var button = document.querySelector("button");
+		button.style.marginTop = "0px";
+		button.style.transitionDuration = "0.5s";
+
+		return true;
+
 	}
+}
+
+//Get the value of email and name inserted of user
+function sendDadas() {
+	var nameUser = document.querySelector("input#name").value;
+	var vefiName = valideName(nameUser);
+
+    var emailUser = document.querySelector("input#email").value;
+    var vefiEmail = valideEmail(emailUser);
+    
+    if(valideName(nameUser) && valideEmail(emailUser)){
+    	/*Here will are the post method*/
+
+
+    	//After the email was published, the page will be change 
+    	document.location.href = "lastPage.html";
+	}
+}
+/*When user select some input*/
+function mouseUpName(){
+	//Change shdown of border input 
+	var box = document.querySelector("input#name");
+	box.style.boxShadow = "0 0px 25px 0 rgba(0, 0, 0, 0.2)";
+}
+
+function mouseUpEmail(){
+	//Change shdown of border input 
+	var box = document.querySelector("input#email");
+	box.style.boxShadow = "0 0px 25px 0 rgba(0, 0, 0, 0.2)";
+}
+
+/*When user leave some input*/
+function mouseDownName(){
+	//Change shdown of border input 
+	var box = document.querySelector("input#name");
+	box.style.boxShadow = "none";
+}
+
+function mouseDownEmail(){
+	//Change shdown of border input 
+	var box = document.querySelector("input#email");
+	box.style.boxShadow = "none";
 }
