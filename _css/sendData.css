@@ -127,7 +127,7 @@ input#email{
 	position: absolute;
 	width: 142px;
 	height: 27px;
-	left: 900px;
+	left: 950px;
 	top: 406px;
 
 	font-family: Montserrat;
@@ -136,13 +136,8 @@ input#email{
 	font-size: 14px;
 	line-height: 27px;
 
-	color: #D0D0D0;
+	color: "red";
 }
-
-.emailPlace::-webkit-placeholder {
-    color: "red";
-}
-
 /*Pictures*/
 img#logo
 {
