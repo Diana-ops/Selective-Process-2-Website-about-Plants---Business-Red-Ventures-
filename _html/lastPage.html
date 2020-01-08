@@ -5,7 +5,7 @@
 		<title>Plants Simulator</title>
 
 		<!--Open the file sendData.css for sendData.html-->
-		<link rel="stylesheet" type="text/css" href="../_css/sendData.css"/>
+		<link rel="stylesheet" type="text/css" href="../_css/lastPage.css"/>
 
 		<!--Start to responsive desing-->
 		<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -25,11 +25,10 @@
 		<div id="choiceUser"> <!--Here will be build by JavaScript--> </div>
 
 		<!--Formulário-->
-		<p id="title">Nice pick!</p>
+		<p id="title">Thank you</p>
 
-		<p id="text">	Tell us your name and e-mail <br>
-			and we will get in touch <br>
-			regarding your order ;) 
+		<p id="text">	You will hear from us soon. <br>
+						Please check your e-mail!
 		</p>
 
 		<!--For use the Axios-->
@@ -42,15 +41,9 @@
 		<!--Create of elements-->
 		<script src="../_js/sendDatas.js"></script>
 
-		<div id = "from" onsubmit="return false;">
-			<form action="/action_page.php">
-				<p id="name">Name</p>
-					<input type="text" placeholder="Crazy Plant Person" id="name" onmousedown="mouseUpName()" onmouseout="mouseDownName()"></input>
-				<p id="email">Email</p>
-					<input type="text" placeholder="plantperson@email.com" id="email" class="emailPlace" onmousedown="mouseUpEmail()" onmouseout="mouseDownEmail()" ></input>
-
-				<button id ="send" onclick="sendDadas();">send</button>
-			</form>
+		<div id = "from">
+			<!--Image for thanks-->
+			<img src="../assets/illustrations/envelop.png" alt="Envelop" id="envelop">
 
 		</div>
 	
