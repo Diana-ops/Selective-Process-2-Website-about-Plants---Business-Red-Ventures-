@@ -1,6 +1,6 @@
 # Plant Simulator Website
 
-<strong>Status of Applicarion: </strong> In development
+![sitePlantasLayout](https://user-images.githubusercontent.com/46378210/72463902-0de4e600-37b3-11ea-8455-f0c86637bb16.png)
 
 In this application, the user will choice a type of plant based in three questions: 
 
@@ -43,4 +43,3 @@ ferramenta <strong>Figma</strong>, que permite visualizar o script .css dos elem
 
 Em <strong>layout</strong>, é possível visualizar o site tanto na versão para <strong>desktop</strong> como <strong>mobile</strong>.
 
-<strong>Status da Aplicação: </strong> Em desenvolvimento. 
