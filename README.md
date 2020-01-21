@@ -1,4 +1,9 @@
-![title](https://user-images.githubusercontent.com/46378210/72849352-438f4080-3c85-11ea-912e-7caedec91139.png)
+![title](https://user-images.githubusercontent.com/46378210/72853365-f2d11500-3c8f-11ea-8282-aa616458ad61.png)
+
+![choices](https://user-images.githubusercontent.com/46378210/72853352-e64cbc80-3c8f-11ea-94d8-a3c70f6f593f.png)
+![mobileLayout](https://user-images.githubusercontent.com/46378210/72853358-ea78da00-3c8f-11ea-9388-df008cc4faa9.png)
+![plants](https://user-images.githubusercontent.com/46378210/72853359-ea78da00-3c8f-11ea-8989-991aee336282.png)
+![send](https://user-images.githubusercontent.com/46378210/72853360-ecdb3400-3c8f-11ea-92d9-d55bcf7a34d6.png)
 
 ![sitePlantasLayout](https://user-images.githubusercontent.com/46378210/72463902-0de4e600-37b3-11ea-8455-f0c86637bb16.png)
 
