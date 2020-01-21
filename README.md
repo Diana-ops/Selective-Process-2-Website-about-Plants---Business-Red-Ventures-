@@ -26,8 +26,3 @@ The repositories was divided in following directories:
 - _js: files of type .js
 - assets: compost by images that will be at application. Beyond a file of type .sketch, where was build the design from tool <strong>Figma</strong>, that allowed see the script .css of elements of layout. 
 
-In <strong>layout</strong>, is possible to see the website in <strong> desktop </strong> version as <strong> mobile </strong> version. 
-
-![mobile](https://user-images.githubusercontent.com/46378210/71784093-2fcdb400-2fce-11ea-9fad-b18cf12b355b.PNG)
-![desktop](https://user-images.githubusercontent.com/46378210/71784106-60155280-2fce-11ea-915d-afd0b4012418.PNG)
-
