@@ -1,4 +1,6 @@
-# Plant Simulator Website (Front-End Application)
+<h1 align="center"> 
+  Plant Simulator Website (Front-End Application)
+</h1>
 
 ![sitePlantasLayout](https://user-images.githubusercontent.com/46378210/72463902-0de4e600-37b3-11ea-8455-f0c86637bb16.png)
 
