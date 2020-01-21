@@ -26,3 +26,4 @@ The repositories was divided in following directories:
 - _js: files of type .js
 - assets: compost by images that will be at application. Beyond a file of type .sketch, where was build the design from tool <strong>Figma</strong>, that allowed see the script .css of elements of layout. 
 
+<img align="center" src="https://66.media.tumblr.com/5240545d1b83e237bf9a84070ef7d65e/tumblr_ow4mpri97G1war5f9o1_400.gifv"/>
