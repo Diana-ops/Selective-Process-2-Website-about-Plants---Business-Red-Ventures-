@@ -11,16 +11,25 @@ front-end. The goal of application is to allow that user  will choice a type of 
 
 :dog: If there are or not a pet
 
-![choices](https://user-images.githubusercontent.com/46378210/72853352-e64cbc80-3c8f-11ea-94d8-a3c70f6f593f.png)
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/46378210/72853352-e64cbc80-3c8f-11ea-94d8-a3c70f6f593f.png"/>
+</p>
 
-Based in answers, will be displayed a list with the types of plants recommended:
+<p align="center">
+  Based in answers, will be displayed a list with the types of plants recommended:
+</p>
 
-![plants](https://user-images.githubusercontent.com/46378210/72853359-ea78da00-3c8f-11ea-8989-991aee336282.png)
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/46378210/72853359-ea78da00-3c8f-11ea-8989-991aee336282.png"/>
+</p>
 
-When choosing one, the user will be direct to the form where he will input your data (name and email) for request your choice.
+<p align="center">
+  When choosing one, the user will be direct to the form where he will input your data (name and email) for request your choice.
+</p>
 
-![send](https://user-images.githubusercontent.com/46378210/72853360-ecdb3400-3c8f-11ea-92d9-d55bcf7a34d6.png)
-
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/46378210/72853360-ecdb3400-3c8f-11ea-92d9-d55bcf7a34d6.png"/>
+</p>
 
 ![mobileLayout](https://user-images.githubusercontent.com/46378210/72853358-ea78da00-3c8f-11ea-9388-df008cc4faa9.png)
 
