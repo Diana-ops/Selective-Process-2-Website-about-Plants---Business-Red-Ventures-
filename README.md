@@ -72,7 +72,10 @@ The pags can be list righ here:
 - [X] To do a responsive website for desktop version; 
 - [ ] To do a responsive website for mobile version; 
 - [ ] Use the PUT method for formating the informations of user (name and email) for to send to backend;
-- [ ] To otimize the scripts 
+- [ ] Fragment the codes in JS for separete the functionalities 
+- [ ] To optimize the application for there aren't dupling code . It is possible to do this using some functions 
+- [ ] To increse the directories organization 
+- [ ] To comment the function of each file of code for to know what he is doing. 
 
 This are some goals I defined for to build this project  and other with the **feedback** of the Red Ventures company. Unfortunately, I don't pass for next phase because I can't to develop the responsive website for mobile and the estructure of my code should to be more otimized. But, I liked to develop him because I learng more JS, API's and responsive website. 
 
