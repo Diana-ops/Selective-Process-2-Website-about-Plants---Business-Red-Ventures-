@@ -69,20 +69,31 @@ The pags can be list righ here:
 ### Completed Tasks
 
 :heavy_check_mark: To open the files of .svg type;
+
 :heavy_check_mark: To build the estructure with HTML;
+
 :heavy_check_mark: To build the style of elements with CSS;
+
 :heavy_check_mark: To use the GET method for acess the information about all the plants by API with Axios (JS);
+
 :heavy_check_mark: To build elements and style their with JS;
+
 :heavy_check_mark: To build a path between the pages;
+
 :heavy_check_mark: To do a responsive website for desktop version;
  
 ### Tasks to be Done
 
 :memo: To do a responsive website for mobile version;
+
 :memo: To use the PUT method for formating the informations of user (name and email) for to send to backend;
+
 :memo: To fragment the codes in JS for separete the functionalities;
+
 :memo: To optimize the application so that there is no duplicate code. It is possible to do this using some functions;
+
 :memo: To improvide the directories organization;
+
 :memo: To comment the function of each file of code for to know what he is doing.
 
 <p align="justify">
