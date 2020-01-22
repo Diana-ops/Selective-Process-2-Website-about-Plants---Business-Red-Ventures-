@@ -103,3 +103,7 @@ The pags can be list righ here:
 <p align="center">
 <img src="https://66.media.tumblr.com/5240545d1b83e237bf9a84070ef7d65e/tumblr_ow4mpri97G1war5f9o1_400.gifv"/>
 </p>
+
+If you can and wanted give me some **feedback** about my project or README.md, send me a **Pull Requests**. Advices are many welcome and constructive for me :smile:
+
+Give me a **Star** if this project help or inspired you somehow :star:
