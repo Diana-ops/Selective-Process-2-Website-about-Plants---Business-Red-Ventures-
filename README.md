@@ -1,5 +1,12 @@
 ![title](https://user-images.githubusercontent.com/46378210/72853365-f2d11500-3c8f-11ea-8282-aa616458ad61.png)
 
+This website was develop for selective process for [Red Ventures](https://www.redventures.com/) company for 
+front-end wave. The goal of application is to allow that user  will choice a type of plant based in three questions: 
+
+- Amount of sun
+- Frequency of drainage
+- If there are or not a pet
+
 ![choices](https://user-images.githubusercontent.com/46378210/72853352-e64cbc80-3c8f-11ea-94d8-a3c70f6f593f.png)
 ![mobileLayout](https://user-images.githubusercontent.com/46378210/72853358-ea78da00-3c8f-11ea-9388-df008cc4faa9.png)
 ![plants](https://user-images.githubusercontent.com/46378210/72853359-ea78da00-3c8f-11ea-8989-991aee336282.png)
@@ -9,9 +16,7 @@
 
 In this application, the user will choice a type of plant based in three questions: 
 
-- Amount of sun
-- Frequency of drainage
-- If there are or not a pet
+
 
 Based in answers, will be displayed a list with the types of plants recommended. When choosing one, the user will be direct to the form where he will input your data (name and email) for request your choice.
 
