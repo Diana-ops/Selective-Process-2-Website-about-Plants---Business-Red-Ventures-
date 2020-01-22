@@ -31,7 +31,10 @@ front-end. The goal of application is to allow that user  will choice a type of 
   <img src="https://user-images.githubusercontent.com/46378210/72853360-ecdb3400-3c8f-11ea-92d9-d55bcf7a34d6.png"/>
 </p>
 
-![mobileLayout](https://user-images.githubusercontent.com/46378210/72853358-ea78da00-3c8f-11ea-9388-df008cc4faa9.png)
+## :iphone: Mobile version of Application  
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/46378210/72853358-ea78da00-3c8f-11ea-9388-df008cc4faa9.png"/>
+</p>
 
 ## For run the website
 
@@ -77,7 +80,9 @@ The pags can be list righ here:
 - [ ] To increse the directories organization 
 - [ ] To comment the function of each file of code for to know what he is doing. 
 
-This are some goals I defined for to build this project  and other with the **feedback** of the Red Ventures company. Unfortunately, I don't pass for next phase because I can't to develop the responsive website for mobile and the estructure of my code should to be more otimized. But, I liked to develop him because I learng more JS, API's and responsive website. 
+<p align="justify">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This are some goals I defined for to build this project  and other with the **feedback** of the Red Ventures company. Unfortunately, I don't passed for next phase because I could to develop the responsive website for mobile and the estructure of my code had should to be more otimized. But, I liked to develop him because I learng more about JS, API's and responsive website.
+</p>
 
 <p align="center">
 <img src="https://66.media.tumblr.com/5240545d1b83e237bf9a84070ef7d65e/tumblr_ow4mpri97G1war5f9o1_400.gifv"/>
