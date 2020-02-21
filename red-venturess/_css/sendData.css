@@ -1,0 +1,186 @@
+@charset "UTF-8";
+
+/*Import of Google Founts*/
+
+/*Bold
+@import url('https://fonts.googleapis.com/css?family=Montserrat:800&display=swap');*/
+
+/*Light*/
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300&display=swap');
+
+body {
+	background-color: "white"; /*Background Gray*/
+	font-family: 'Montserrat', sans-serif;
+}
+
+/*Text*/
+
+/*General*/
+p{
+	position: absolute;
+	font-family: Montserrat;
+	font-style: normal;
+
+}
+
+/* Nice pick! */
+p#title{
+
+	width: 285px;
+	height: 37px;
+	left: 841px;
+	top: 180px;
+	z-index: 1;
+
+	font-weight: bold;
+	font-size: 40px;
+	line-height: 37px;
+	color: #0C261C;
+}
+
+/* Tell us your name an */
+p#text{
+
+	width: 244px;
+	height: 87px;
+	left: 843px;
+	top: 254px;
+	z-index: 1;
+
+	font-weight: 300;
+	font-size: 16px;
+	line-height: 29px;
+	color: #6E6E6E
+}
+
+/* Name */
+p#name{
+
+	width: 278px;
+	height: 27px;
+	left: 49px;
+	top: 213px;
+
+	font-weight: 600;
+	font-size: 16px;
+	line-height: 27px;
+	color: #6E6E6E;
+}
+
+/* E-mail */
+p#email{
+
+	width: 278px;
+	height: 27px;
+	left: 49px;
+	top: 304px;
+
+	font-weight: 600;
+	font-size: 16px;
+	line-height: 27px;
+	color: #6E6E6E;
+}
+
+/*Divs*/
+div#from{
+	position: absolute;
+	width: 381px;
+	height: 495px;
+	left: 794px;
+	top: 158px;
+
+	background: #F6F6F6;
+}
+
+/*Inputs*/
+
+/* Rectangle Copy */
+input#name{
+
+	position: absolute;
+	width: 285px;
+	height: 40px;
+	left: 49px;
+	top: 260px;
+
+	background: #FFFFFF;
+	border-radius: 19px;
+	border: none;
+}
+
+/* Rectangle Copy 2 */
+input#email{
+
+	position: absolute;
+	width: 285px;
+	height: 40px;
+	left: 49px;
+	top: 350px;
+
+	background: #FFFFFF;
+	border-radius: 19px;
+	border: none;
+}
+
+::placeholder{
+	/* Crazy Plant Person */
+	position: absolute;
+	width: 142px;
+	height: 27px;
+	left: 950px;
+	top: 406px;
+
+	font-family: Montserrat;
+	font-style: normal;
+	font-weight: 300;
+	font-size: 14px;
+	line-height: 27px;
+
+	color: "red";
+}
+/*Pictures*/
+img#logo
+{
+	position: absolute;
+	width: 208px;
+	height: 25px;
+	left: 81.5px;
+	top: 250px;
+
+	transform: rotate(-90deg);
+}
+
+/*Line*/
+hr#line{
+	position: absolute;
+	height: 259px;
+	left: 180px;
+	top: 390px;
+}
+
+/* Button/NoIcon */
+button#send{
+
+	position: absolute;
+	width: 138px;
+	height: 50px;
+	left: 189px;
+	top: 413.22px;
+
+	border-radius: 25px;
+	border: 1px solid #15573F;
+	box-sizing: border-box;
+
+	text-align: center;
+
+	font-family: Montserrat;
+	font-style: normal;
+	font-weight: 300;
+	font-size: 16px;
+	line-height: 20px;
+	/* identical to box height */
+
+	text-align: center;
+
+	color: #15573F;
+}

@@ -1,0 +1,59 @@
+<DOCTYPE html>
+<html>
+
+	<head>
+		<title>Plants Simulator</title>
+
+		<!--Open the file sendData.css for sendData.html-->
+		<link rel="stylesheet" type="text/css" href="../_css/sendData.css"/>
+
+		<!--Start to responsive desing-->
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<!--Open Jquery-->
+		<script src="jquery-3.4.1.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+		
+	</head>
+
+	<body>
+		<!--Logo-->
+		<img src="../assets/logo/logo-greenthumb.svg" alt="Logo" id="logo">
+		<hr id="line">
+
+
+		<div id="choiceUser"> <!--Here will be build by JavaScript--> </div>
+
+		<!--Formulário-->
+		<p id="title">Nice pick!</p>
+
+		<p id="text">	Tell us your name and e-mail <br>
+			and we will get in touch <br>
+			regarding your order ;) 
+		</p>
+
+		<!--For use the Axios-->
+		<!--Network is necessary for use it-->
+		<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+		
+		<!--Style of elements-->
+		<script src="../_js/sendDatasStyle.js"></script>
+
+		<!--Create of elements-->
+		<script src="../_js/sendDatas.js"></script>
+
+		<div id = "from" onsubmit="return false;">
+			<form action="/action_page.php">
+				<p id="name">Name</p>
+					<input type="text" placeholder="Crazy Plant Person" id="name" onmousedown="mouseUpName()" onmouseout="mouseDownName()"></input>
+				<p id="email">Email</p>
+					<input type="text" placeholder="plantperson@email.com" id="email" class="emailPlace" onmousedown="mouseUpEmail()" onmouseout="mouseDownEmail()" ></input>
+
+				<button id ="send" onclick="sendDadas();">send</button>
+			</form>
+
+		</div>
+	
+	</body>
+
+</html>

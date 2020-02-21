@@ -1,0 +1,105 @@
+@charset "UTF-8";
+
+/*Import of Google Founts*/
+
+/*Bold
+@import url('https://fonts.googleapis.com/css?family=Montserrat:800&display=swap');*/
+
+/*Light*/
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300&display=swap');
+
+body {
+	background-color: "white"; /*Background Gray*/
+	font-family: 'Montserrat', sans-serif;
+}
+
+/*Text*/
+
+/*General*/
+p{
+	position: absolute;
+	font-family: Montserrat;
+	font-style: normal;
+
+}
+
+/* Thank you */
+p#title{
+	position: absolute;
+	width: 218px;
+	height: 37px;
+	left: 873px;
+	top: 170px;
+	z-index: 1;
+
+	font-family: Montserrat;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 35px;
+	line-height: 37px;
+
+	text-align: center;
+
+	color: #0C261C;
+}
+
+/* You will hear from u */
+p#text{
+	position: absolute;
+	width: 265px;
+	height: 54px;
+	left: 849px;
+	top: 240px;
+	z-index: 1;
+
+	font-family: Montserrat;
+	font-style: normal;
+	font-weight: 300;
+	font-size: 16px;
+	line-height: 27px;
+
+	text-align: center;
+
+	color: #6E6E6E;
+}
+
+/*Divs*/
+div#from{
+	position: absolute;
+	width: 381px;
+	height: 495px;
+	left: 794px;
+	top: 158px;
+
+	background: #F6F6F6;
+}
+
+/*Pictures*/
+img#logo
+{
+	position: absolute;
+	width: 208px;
+	height: 25px;
+	left: 81.5px;
+	top: 250px;
+
+	transform: rotate(-90deg);
+}
+
+/* Bitmap */
+img#envelop{
+
+	position: absolute;
+	width: 204px;
+	height: 238px;
+	left: 89px;
+	top: 188px;
+}
+
+/*Line*/
+hr#line{
+	position: absolute;
+	height: 259px;
+	left: 180px;
+	top: 390px;
+}
