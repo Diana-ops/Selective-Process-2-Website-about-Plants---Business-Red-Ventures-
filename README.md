@@ -2,4 +2,5 @@
 <img src="https://user-images.githubusercontent.com/46378210/75095204-53928c80-5571-11ea-9638-61e5a0d25f8c.png"/>
 </p>
 
-This repository is destined to list all projects I developed for selective processes as frontend. The goal is to show my evolution as developer
+- [X] [Red Ventures](https://www.redventures.com/) - [Plants](https://github.com/Diana-ops/selectiveProcesses-lisf-of-projects/tree/master/red-venturess)
+- [ ] [xGB](https://xgb.com.br/) -[Customer and Product Management](https://github.com/Diana-ops/selectiveProcesses-lisf-of-projects/tree/master/xgb)
