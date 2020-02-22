@@ -3,4 +3,8 @@
 </p>
 
 - [X] [Red Ventures](https://www.redventures.com/) - [Plants](https://github.com/Diana-ops/selectiveProcesses-lisf-of-projects/tree/master/red-venturess)
+- *The project:* frontend application for choice plants based in amount of sun, frequency of drainage and ff there are or not a pet
+- *Resources*: HTML, CSS, JS and API
+- Not responsive 
+
 - [ ] [xGB](https://xgb.com.br/) -[Customer and Product Management](https://github.com/Diana-ops/selectiveProcesses-lisf-of-projects/tree/master/xgb)
