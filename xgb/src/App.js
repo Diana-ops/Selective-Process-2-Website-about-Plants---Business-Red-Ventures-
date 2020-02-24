@@ -1,15 +1,20 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 
-import { Main } from './Main'
+import { Main } from './pages/Main'
+
+import { ListProducts } from './pages/Main-List-Products'
+
 
 function App() {
   return (
-    <div className="main-class">
-      <Main />
-    </div>
+  	<>
+	    <div className="main-class">
+	     	<Main />
+	    </div>
 
+
+    </>
   );
 }
 

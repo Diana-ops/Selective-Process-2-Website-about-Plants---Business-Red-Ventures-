@@ -1,10 +1,22 @@
-import React from 'react';
-import logo from './logo.svg';
+/*Construção da tela de login*/
 
-import { BuildField } from './BuildField'
+/*To Do:
+  - Cadastra clientes
+  - Verifica existencia de clientes
+  - Lista clientes
+*/
+import React from 'react';
 
 import data from './services/json.json'
+
+import { BuildField } from './BuildField'
 import { ListClients } from './ListClients'
+
+import { Link } from 'react-router-dom'
+
+import { ListProducts, helloUser } from './Main-List-Products'
+
+import { HelloUser } from './helloUser'
 
 let clients = data.CLIENTS;
 
@@ -40,8 +52,8 @@ export class Main extends React.Component {
   listClients = () => {
     
     const text = []
-    data.CLIENTS.map((experience, i) => {
-          text.push(experience.name)
+    data.CLIENTS.map((client, i) => {
+          text.push(client.name)
     })
 
     this.setState({
@@ -50,6 +62,7 @@ export class Main extends React.Component {
     
   }
 
+  /*Verifica o acesso e migra para a próxima página*/
   handleSubmitForm = event => { 
     event.preventDefault();
 
@@ -62,6 +75,8 @@ export class Main extends React.Component {
       this.verifyLogin(name, cpf)
       if(this.stateLogin){
         alert("Acesso Autorizado")
+        return <h1>Ola Diana</h1>
+
       } else {
         alert("Este usuário não existe ou os dados ou estão incorretos!")
       }
@@ -87,9 +102,11 @@ export class Main extends React.Component {
   render(){
     return (
       <>
+      
         <header className="header-class">
-          <h1>Welcome to xGB ecomerce</h1>
+          <h1>Welcome to ecommerc of xGB</h1>
         </header>
+
 
         <form className="form-class" onSubmit={this.handleSubmitForm}>
           <h2>Entrar</h2>
@@ -107,8 +124,9 @@ export class Main extends React.Component {
             handleChange={this.handleChange}
             name = "cpf"
           />
-
+          
           <button type="submit">Entrar</button>
+          
         </form>
 
           <button onClick={this.subimitNewLogin} type="submit">Cadastrar</button>
@@ -116,7 +134,10 @@ export class Main extends React.Component {
           <h2>Quem compra na xGB</h2>
 
           <ListClients />
-          
+
+          <HelloUser title={this.state.name} />
+
+          <ListProducts />
       </>
     );
   }
