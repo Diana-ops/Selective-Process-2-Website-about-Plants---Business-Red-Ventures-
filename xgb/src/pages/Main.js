@@ -7,6 +7,8 @@
 */
 import React from 'react';
 
+import "./style/Main.css"
+
 import data from './services/json.json'
 
 import { BuildField } from './BuildField'
@@ -102,36 +104,37 @@ export class Main extends React.Component {
   render(){
     return (
       <>
-      
-        <header className="header-class">
-          <h1>Welcome to ecommerc of xGB</h1>
-        </header>
+
+        
+        <div className="form-clients">
+          <header className="header-class">
+            <h1 className="title-1">Welcome to online commerce of xGB</h1>
+          </header>
 
 
-        <form className="form-class" onSubmit={this.handleSubmitForm}>
-          <h2>Entrar</h2>
+          <form className="form-class" onSubmit={this.handleSubmitForm}>
 
-          <BuildField 
-            title={"Name:"} 
-            value={this.state.name} 
-            handleChange={this.handleChange}
-            name = "name"
-          />
+            <BuildField 
+              title={"Name:"} 
+              value={this.state.name} 
+              handleChange={this.handleChange}
+              name = "name"
+            />
 
-          <BuildField 
-            title={"CPF:"} 
-            value={this.state.cpf} 
-            handleChange={this.handleChange}
-            name = "cpf"
-          />
-          
-          <button type="submit">Entrar</button>
-          
-        </form>
+            <BuildField 
+              title={"CPF:"} 
+              value={this.state.cpf} 
+              handleChange={this.handleChange}
+              name = "cpf"
+            />
+            
+            <button className="entrar-button" type="submit">Sing In</button>
+            <button className="cadastrar-button"onClick={this.subimitNewLogin} type="submit">Register</button>
+          </form>
 
-          <button onClick={this.subimitNewLogin} type="submit">Cadastrar</button>
+            
 
-          <h2>Quem compra na xGB</h2>
+          </div>
 
           <ListClients />
 

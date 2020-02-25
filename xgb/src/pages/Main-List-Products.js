@@ -7,6 +7,8 @@ import { ListProductsData } from './ListProducts'
 
 import { HelloUser } from './helloUser'
 
+import "./style/Main-List-Products.css"
+
 export class ListProducts extends React.Component {
 	
 	constructor(props){
@@ -52,12 +54,18 @@ export class ListProducts extends React.Component {
  	renderEditForm() {
 
  		return(
+ 			<div className="form-edit-product">
  				<form onSubmit={this.onUpdateHandle.bind(this)}>
- 					<h1>Edite o produto</h1>
+ 					<h1 className="title-6">Edit this project</h1>
+
+ 					<h3>New Name of Product:</h3>
  					<input type="text" className="item-name"name="updateItemName" defaultValue={this.state.name}/>
+ 					
+ 					<h3>New Price of Product:</h3>
  					<input type="text" className="item-price"name="updateItemPrice" defaultValue={this.state.price}/>
- 					<button className="update-add-item">Edit for ..</button>
+ 					<button className="update-add-item">It is great for me!</button>
  				</form>
+ 			</div>
  		);	
  	}
 
@@ -143,10 +151,10 @@ export class ListProducts extends React.Component {
 		    <>
 
 		    	
-		        <h1>Choice your products and click in To Buy</h1>
+		        <h1 className="title-3">Choice your products and click in <span>To Buy</span></h1>
 
 		       	<form className="form-class" onSubmit={this.handleSubmitForm}>
-		        <h2>Post a new product!</h2>
+		        <h2 className="title-4">Post a new product!</h2>
 
 			          <BuildField 
 			            title={"Name:"} 
@@ -156,29 +164,39 @@ export class ListProducts extends React.Component {
 			          />
 
 			          <BuildField 
-			            title={"Price: $"} 
+			            title={"Price: "} 
 			            value={this.state.price} 
 			            handleChange={this.handleChange}
 			            name = "price"
+			            placeholder={"$"}
 			          />
 
-		        <button type="submit">Criar novo produto!</button>
+		        <button type="submit" className="create-product">Create a new project!</button>
 		        </form>
 
 		        
+		        
+		       <div className="list-products">
 
-		       <div>
+		      	<h2 className="title-5">List of Products</h2>
+
+		       	<td className="sub-title">Name</td>
+
+		       	<td className="sub-title">Price</td>
+
                 {
+
 					this.state.products.map((product, i) => {
 						return (
 							<>
+
 							<tr key={product.id}>
 								
 								<td>{product.name}</td>
 								<td>{product.price}</td>
-								<td><button onClick={this.onDeleteHandle.bind(this, product.id)}>Excluir</button></td>
-								<td><button onClick={this.onEditHandle.bind(this, product.id, product.name, product.price)}>Editar</button></td>
-								<button onClick={this.onBuyProducts.bind(this, product.id, product.name, product.price)}>Comprar este item</button>
+								<td><button className="delete-button" onClick={this.onDeleteHandle.bind(this, product.id)}>Delete</button></td>
+								<td><button className="edit-button" onClick={this.onEditHandle.bind(this, product.id, product.name, product.price)}>Edit</button></td>
+								<button className="buy-button" onClick={this.onBuyProducts.bind(this, product.id, product.name, product.price)}>Buy this</button>
 							</tr>
 
 							

@@ -1,0 +1,98 @@
+.title-3, .title-4, .title-6 {
+	text-align: center;
+}
+
+.title-5 {
+	text-align: center;
+	margin-top: -3%;
+}
+
+.sub-title {
+	font-weight: bold;
+
+}
+
+h1 span {
+	background-color: rgb(210,210,210);
+	color: green;
+}
+
+/*Lista de Produtos*/
+.list-products {
+	background-color: white;
+	width: 80%;
+	margin-left: 5%;
+	padding: 5%;
+}
+
+/*Butons*/
+
+.create-product, .delete-button, .edit-button, .buy-button, .update-add-item {
+	padding: 3%;
+	margin: 2%;
+
+	border-width: 1px;
+
+	border-color: transparent;
+
+}
+
+.create-product, .update-add-item {
+	background-color: black;
+
+	margin-top: 10%;
+	margin-left: 27%;
+
+	width: 150px;
+
+	color: white;
+}
+
+.delete-button {
+	background-color: white;
+	width: 80px;
+
+	margin-left: 10%;
+
+	border-color: #ff4040;
+
+	color: #ff4040;
+}
+
+.edit-button {
+	width: 80px;
+	background-color: white;
+	margin-left: 20%;
+
+	border-color: #ffbf87;
+	color: #ffbf87;
+
+}
+
+.buy-button {
+	width: 80px;
+	background-color: white;
+
+	margin-left: 30%;
+
+	border-color: #24b7ff;
+	color: #24b7ff;
+}
+
+.update-add-item {
+	margin-left: 33%;
+	margin-top: 3%;
+
+	font-size: 15px;
+}
+
+.form-edit-product {
+	background-color: white;
+
+	width: 80%;
+	margin-left: 10%;
+	margin-top: 5%;
+
+	margin-bottom: 5%;
+}
+

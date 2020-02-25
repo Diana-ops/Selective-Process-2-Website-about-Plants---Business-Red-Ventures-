@@ -1,10 +1,13 @@
 import React from 'react'
 
+import './style/BuildField.css'
+
 export const BuildField = ({
   title,
   value,
   handleChange,
-  name
+  name,
+  placeholder
 }) => {
   const handleInputChange = e => {
     handleChange(e.target.name, e.target.value);
@@ -13,8 +16,7 @@ export const BuildField = ({
 		return(
 			<>
 				<h3>{title}</h3>
-          		<input type="text" name={name} value={value} onChange={handleInputChange}
-/>
+        <input type="text" name={name} value={value} onChange={handleInputChange} placeholder={placeholder}/>
 			</>
 		);
 }

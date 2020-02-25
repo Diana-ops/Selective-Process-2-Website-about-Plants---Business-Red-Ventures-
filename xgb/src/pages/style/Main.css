@@ -1,0 +1,121 @@
+/*Geral*/
+.main-class {
+  display: grid;
+
+  /*2 colunas*/
+  grid-template-columns: 1fr;
+
+  margin: 5% 5% 5%;
+  margin-top: -3%;
+
+  background-color: rgb(210,210,210);
+}
+
+/*Formulário de Login*/
+
+/*Titulo - Formulário*/
+.title-1, .title-2 {
+	width: 90%;
+
+	color: white;	
+
+	font-weight: 300;
+	text-align: center;
+
+	margin-left: 5%;
+	
+}
+
+.title-1 {
+	background-color: black;
+}
+
+.title-2 {
+	background-color: rgb(190,190,190);
+}
+
+
+/*Formulário*/
+
+.form-class {
+	display: block;
+	background-color: white;
+	box-shadow: 0px 0px 8px gray;
+
+	width: 60%;
+
+	margin-left: 18%;
+	margin-bottom: 4%;
+
+	padding: 3%;
+
+	align-items: center;
+
+}
+
+/*Botão de login e cadastro*/
+.entrar-button, .cadastrar-button {
+
+	display: grid;
+
+	padding: 3%;
+	width: 150px;
+	margin: 2%;
+
+	border-width: 1px;
+
+	margin-left: 25%;
+
+}
+
+.entrar-button {
+
+	border-color: transparent;
+	background-color: black;
+	color: white;
+
+	margin-top: 10%;
+}
+
+.cadastrar-button {
+
+	border-color: black;
+
+	background-color: white;
+	color: black;
+}
+
+/*Lista de Clientes*/
+.listClients-class{
+	background-color: rgb(210,210,210);
+
+	text-align: center;
+
+	line-height: 30px;
+
+}
+
+span {
+	text-align: center;
+
+	background-color: white;
+	color: black;
+	font-weight: bold;
+
+}
+
+/*Hello {user}*/
+.hello-user {
+	margin-left: 5%;
+	margin-top: 10%;
+}
+
+
+@media screen and (max-width: 900px) {
+	.main-class {
+
+	  /*1 coluna*/
+	  grid-template-columns: 1fr;
+
+	}
+}
