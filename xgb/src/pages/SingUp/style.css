@@ -1,3 +1,8 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto+Mono:100,700&display=swap');
+
+* {	margin-left: auto;
+    margin-right: auto;}
+
 /*Geral*/
 .main-class {
   display: grid;
@@ -14,15 +19,17 @@
 /*Formulário de Login*/
 
 /*Titulo - Formulário*/
-.title-1, .title-2 {
-	width: 90%;
+.title-1 {
+	width: 80%;
 
 	color: white;	
 
 	font-weight: 300;
 	text-align: center;
 
-	margin-left: 5%;
+	margin-left: auto;
+
+	padding: 3%;
 	
 }
 
@@ -30,41 +37,56 @@
 	background-color: black;
 }
 
-.title-2 {
-	background-color: rgb(190,190,190);
-}
-
 
 /*Formulário*/
 
-.form-class {
+/*Mensagem de erro/aviso*/
+
+.msg-aviso, .msg-erro {
+	text-align: center;
+	font-weight: bold;
+}
+.msg-erro { color: red; }
+
+.msg-aviso { color: blue; }
+
+.form-class-register {
+
 	display: block;
 	background-color: white;
 	box-shadow: 0px 0px 8px gray;
 
 	width: 60%;
 
-	margin-left: 18%;
 	margin-bottom: 4%;
 
 	padding: 3%;
 
 	align-items: center;
 
+	height: 10%;
+
 }
 
 /*Botão de login e cadastro*/
+
+/*Div que envolve os botões*/
+
 .entrar-button, .cadastrar-button {
 
-	display: grid;
+	width: 80%;
 
-	padding: 3%;
-	width: 150px;
 	margin: 2%;
+	padding: 3%;
 
 	border-width: 1px;
 
-	margin-left: 25%;
+	text-decoration: none;
+	text-align: center;
+	cursor: pointer;
+
+	margin-left: 10%;
+	margin-top: 5%;
 
 }
 
@@ -73,8 +95,12 @@
 	border-color: transparent;
 	background-color: black;
 	color: white;
+	width: 75%;
+}
 
-	margin-top: 10%;
+.entrar-button-text {
+	text-decoration: none;
+	color: white;
 }
 
 .cadastrar-button {
@@ -83,15 +109,11 @@
 
 	background-color: white;
 	color: black;
-}
 
-/*Lista de Clientes*/
-.listClients-class{
-	background-color: rgb(210,210,210);
+	font-size: 18px;
+	font-family: 'Roboto Mono';
 
-	text-align: center;
-
-	line-height: 30px;
+	margin-top: 10%;
 
 }
 
@@ -111,11 +133,9 @@ span {
 }
 
 
-@media screen and (max-width: 900px) {
-	.main-class {
-
-	  /*1 coluna*/
-	  grid-template-columns: 1fr;
-
+@media screen and (min-width: 900px) {
+	/*Titulo - Formulário*/
+	.title-1 {
+		width: 100%;
 	}
 }

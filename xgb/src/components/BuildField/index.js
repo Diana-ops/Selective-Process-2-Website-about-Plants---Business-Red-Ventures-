@@ -1,6 +1,6 @@
 import React from 'react'
 
-import './style/BuildField.css'
+import './style.css'
 
 export const BuildField = ({
   title,

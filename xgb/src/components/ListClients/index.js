@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import data from "./services/json"; 
+import data from "../../services/json"; 
+
+import './style.css'
 
 export class ListClients extends Component {
 	render() {

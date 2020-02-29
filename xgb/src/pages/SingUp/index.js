@@ -6,29 +6,33 @@
   - Lista clientes
 */
 import React from 'react';
+import "./style.css"
 
-import "./style/Main.css"
+/*Rotas*/
+import { Link, withRouter } from "react-router-dom";
+import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
 
-import data from './services/json.json'
+/*Dados JSON*/
+import data from '../../services/json.json'
 
-import { BuildField } from './BuildField'
-import { ListClients } from './ListClients'
+/*Componentes*/
+import { BuildField } from '../../components/BuildField/index'
+import { ListClients } from '../../components/ListClients/index'
 
-import { Link } from 'react-router-dom'
 
-import { ListProducts, helloUser } from './Main-List-Products'
-
-import { HelloUser } from './helloUser'
 
 let clients = data.CLIENTS;
 
-export class Main extends React.Component {
+class SingUp extends React.Component {
   constructor(props){
       super(props)
       this.state = {
         name: '',
         cpf: '', 
+        error: '',
+        aviso: '',
         stateLogin: false,
+        loginExistent: false,
         stateListClients: []
       }
   }
@@ -39,7 +43,7 @@ export class Main extends React.Component {
   /*Busca CPF inserido pelo usuário*/
   verifyLogin = (name, cpf) => clients.map((nameJson, i) => {
     if(nameJson.cpf == cpf){
-      this.stateLogin = true
+      this.loginExistent = true
     } 
   })
 
@@ -64,26 +68,21 @@ export class Main extends React.Component {
     
   }
 
-  /*Verifica o acesso e migra para a próxima página*/
-  handleSubmitForm = event => { 
-    event.preventDefault();
+  teste() {
+    if(this.stateLogin) {
 
-    const { name, cpf } = this.state;
+      this.loginExistent = false
 
-    if(!name || !cpf){
-      alert("Por favor, preencha os campos!")
+      return(
+          <div className="entrar-button">
+          <Link to="/list-products" className="entrar-button-text">
+            Sing In
+          </Link>
+          </div>
+        
+        );
     }
-    else {
-      this.verifyLogin(name, cpf)
-      if(this.stateLogin){
-        alert("Acesso Autorizado")
-        return <h1>Ola Diana</h1>
-
-      } else {
-        alert("Este usuário não existe ou os dados ou estão incorretos!")
-      }
-    }
-  };
+  }
 
   subimitNewLogin = event => { 
      event.preventDefault();
@@ -93,11 +92,22 @@ export class Main extends React.Component {
      const { name, cpf } = this.state;
 
      this.verifyLogin(name, cpf)
-     if(!this.stateLogin){
+
+     if (!name || !cpf ) {
+        this.setState({ error: "Preencha todos os dados para se cadastrar" });
+        this.setState({ aviso: " " });
+      }
+
+     else if (!this.loginExistent){
         this.createLogin(name, cpf)
-        alert("Usuáio criado")
+        this.setState({ aviso: "Usuáio criado" });
+        this.setState({ error: " " });
+        this.stateLogin = true
+
       } else {
-        alert("Usuáio existente")
+        this.setState({ error: "Usuáio existente" });
+        this.setState({ aviso: " " });
+        this.stateLogin = true
       }
   };
 
@@ -112,8 +122,9 @@ export class Main extends React.Component {
           </header>
 
 
-          <form className="form-class" onSubmit={this.handleSubmitForm}>
-
+          <form className="form-class-register">
+            {this.state.error && <p className="msg-erro">{this.state.error}</p>}
+            {this.state.aviso && <p className="msg-aviso">{this.state.aviso}</p>}
             <BuildField 
               title={"Name:"} 
               value={this.state.name} 
@@ -128,20 +139,20 @@ export class Main extends React.Component {
               name = "cpf"
             />
             
-            <button className="entrar-button" type="submit">Sing In</button>
-            <button className="cadastrar-button"onClick={this.subimitNewLogin} type="submit">Register</button>
+              <button className="cadastrar-button" onClick={this.subimitNewLogin} type="submit">Register</button>
+
+              {this.teste()}
+            
           </form>
 
-            
-
+          
           </div>
 
           <ListClients />
 
-          <HelloUser title={this.state.name} />
-
-          <ListProducts />
       </>
     );
   }
 }
+
+export default withRouter(SingUp);

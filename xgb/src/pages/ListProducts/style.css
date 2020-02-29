@@ -1,3 +1,5 @@
+* {	margin-left: auto;
+    margin-right: auto;}
 .title-3, .title-4, .title-6 {
 	text-align: center;
 }
@@ -12,17 +14,52 @@
 
 }
 
+
 h1 span {
 	background-color: rgb(210,210,210);
 	color: green;
 }
 
+div {
+	margin-left: auto;
+    margin-right: auto;
+}
+
+/*Poste um novo produto - Form*/
+.form-class {
+	display: flex;
+	background-color: white;
+
+	width: 30%;
+	height: 90%;
+
+	margin-top: 5%;
+
+	margin-left: auto;
+    margin-right: auto;
+	
+}
+
 /*Lista de Produtos*/
 .list-products {
 	background-color: white;
+
 	width: 80%;
-	margin-left: 5%;
+
+	margin-top: 10%;
+
 	padding: 5%;
+}
+
+/*Editar produto - Form*/
+.form-edit-product {
+	background-color: white;
+
+	width: 50%;
+
+	margin-top: 5%;
+
+	margin-bottom: 5%;
 }
 
 /*Butons*/
@@ -40,19 +77,20 @@ h1 span {
 .create-product, .update-add-item {
 	background-color: black;
 
-	margin-top: 10%;
-	margin-left: 27%;
+	margin-top: 15%;
+	margin-bottom: 10%;
+	margin-left: 10%;
 
-	width: 150px;
+	width: 80%;
 
 	color: white;
+
 }
 
 .delete-button {
 	background-color: white;
 	width: 80px;
 
-	margin-left: 10%;
 
 	border-color: #ff4040;
 
@@ -62,7 +100,7 @@ h1 span {
 .edit-button {
 	width: 80px;
 	background-color: white;
-	margin-left: 20%;
+
 
 	border-color: #ffbf87;
 	color: #ffbf87;
@@ -73,26 +111,17 @@ h1 span {
 	width: 80px;
 	background-color: white;
 
-	margin-left: 30%;
+
 
 	border-color: #24b7ff;
 	color: #24b7ff;
 }
 
 .update-add-item {
-	margin-left: 33%;
+
 	margin-top: 3%;
 
 	font-size: 15px;
 }
 
-.form-edit-product {
-	background-color: white;
-
-	width: 80%;
-	margin-left: 10%;
-	margin-top: 5%;
-
-	margin-bottom: 5%;
-}
 

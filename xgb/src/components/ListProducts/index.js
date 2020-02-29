@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import data from "./services/json"; 
+import data from "../../services/json"; 
 
 export class ListProductsData extends Component {
 	render() {

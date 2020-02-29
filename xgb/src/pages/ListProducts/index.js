@@ -1,15 +1,19 @@
 import React from 'react';
 
-import data from './services/json.json'
+import data from '../../services/json.json'
 
-import { BuildField } from './BuildField'
-import { ListProductsData } from './ListProducts'
+/*Rotas*/
+import { Link, withRouter } from "react-router-dom";
+import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
 
-import { HelloUser } from './helloUser'
+/*Componentes*/
+import { BuildField } from '../../components/BuildField/index'
+import { ListClients } from '../../components/ListClients/index'
+import { HelloUser } from '../../components/HelloUser/index'
 
-import "./style/Main-List-Products.css"
+import "./style.css"
 
-export class ListProducts extends React.Component {
+class ListProducts extends React.Component {
 	
 	constructor(props){
     	super(props)
@@ -152,27 +156,28 @@ export class ListProducts extends React.Component {
 
 		    	
 		        <h1 className="title-3">Choice your products and click in <span>To Buy</span></h1>
+		        <div className="form-class">
+			       	<form  onSubmit={this.handleSubmitForm}>
+			        	<h2 className="title-4">Post a new product!</h2>
 
-		       	<form className="form-class" onSubmit={this.handleSubmitForm}>
-		        <h2 className="title-4">Post a new product!</h2>
+				          <BuildField 
+				            title={"Name:"} 
+				            value={this.state.name} 
+				            handleChange={this.handleChange}
+				            name = "name"
+				          />
 
-			          <BuildField 
-			            title={"Name:"} 
-			            value={this.state.name} 
-			            handleChange={this.handleChange}
-			            name = "name"
-			          />
+				          <BuildField 
+				            title={"Price: "} 
+				            value={this.state.price} 
+				            handleChange={this.handleChange}
+				            name = "price"
+				            placeholder={"$"}
+				          />
 
-			          <BuildField 
-			            title={"Price: "} 
-			            value={this.state.price} 
-			            handleChange={this.handleChange}
-			            name = "price"
-			            placeholder={"$"}
-			          />
-
-		        <button type="submit" className="create-product">Create a new project!</button>
-		        </form>
+			        <button type="submit" className="create-product">Create a new project!</button>
+			        </form>
+			    </div>
 
 		        
 		        
@@ -214,5 +219,5 @@ export class ListProducts extends React.Component {
 	}
 }
 
-
+export default withRouter(ListProducts);
 
