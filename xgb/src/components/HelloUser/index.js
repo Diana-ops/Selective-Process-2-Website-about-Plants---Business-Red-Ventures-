@@ -1,9 +1,9 @@
 import React from 'react';
 
 export const HelloUser = (props) => {
-    const { title } = props
+    const { nameUser } = props
 
      return (
-      <h1 className="hello-user">Hello, {title}</h1>
+      <h1 className="hello-user">Hello, {nameUser}</h1>
     );
 }

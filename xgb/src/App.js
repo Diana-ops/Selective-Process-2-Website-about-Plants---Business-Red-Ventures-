@@ -4,7 +4,7 @@ import './App.css'
 
 const App = () => 
   	<div className="fundo">
-  		<img className="logo" src="logoXGB.png" alt="logo XGB" heigth="150" width="150"/>
+  		<a href="/signup"><img className="logo" src="logoXGB.png" alt="logo XGB" heigth="150" width="150"/></a>
 	    <div className="main-class">
 	     	<Routes />
 	    </div>

@@ -25,6 +25,13 @@ div {
     margin-right: auto;
 }
 
+/*Hello user*/
+.hello-user {
+	margin-top: 3%;
+	margin-left: auto;
+    margin-right: auto;
+}
+
 /*Poste um novo produto - Form*/
 .form-class {
 	display: flex;

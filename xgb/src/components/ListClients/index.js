@@ -12,8 +12,8 @@ export class ListClients extends Component {
 	                {
 						data.CLIENTS.map((client, i) => {
 							return (
-								<div key={i} >
-									<span>{client.name}</span>
+								<div key={i} style={{ padding: "3%" }}>
+									<span style={{ padding: "3%" }}>{client.name}</span>
 								</div>
 							);
 						})

@@ -22,11 +22,14 @@ import { ListClients } from '../../components/ListClients/index'
 
 
 let clients = data.CLIENTS;
+let budget = data.BUDGET;
+let newId = (Object.keys(clients).length) + 1
 
 class SingUp extends React.Component {
   constructor(props){
       super(props)
       this.state = {
+        id: newId,
         name: '',
         cpf: '', 
         error: '',
@@ -37,21 +40,39 @@ class SingUp extends React.Component {
       }
   }
 
+
   /*Atualizando o estado dos inputs*/
   handleChange = (name, value) => this.setState({ [name]: value });
 
   /*Busca CPF inserido pelo usuário*/
-  verifyLogin = (name, cpf) => clients.map((nameJson, i) => {
-    if(nameJson.cpf == cpf){
+  verifyLogin = (name, cpf) => clients.map((itemJson, i) => {
+    if(itemJson.cpf == cpf && itemJson.name == name){
       this.loginExistent = true
     } 
+    
   })
 
   /*Create - Clients - CRUD*/
-  createLogin = (name, cpf) => clients.push({
-        "id": "56",
+  createLogin = (name, cpf, id) => clients.push({
+        "id": id,
         "name": name,
-        "cpf": cpf
+        "cpf": cpf,
+        "token": false
+  })
+
+  /*Create - Budget - CRUD*/
+  createBudget = ( name, id ) => budget.push({
+      "id": id,
+      "client": name,
+      "productsClient": {}, 
+      "date": null 
+  })
+
+  changeToken = (name, cpf) => clients.map((itemJson, i) => {
+
+    if(itemJson.cpf == cpf && itemJson.name == name){
+      itemJson.token = true
+    }
   })
 
   /*Read - Clients - CRUD*/
@@ -68,11 +89,14 @@ class SingUp extends React.Component {
     
   }
 
-  teste() {
+  showButtonLogin() {
     if(this.stateLogin) {
 
       this.loginExistent = false
 
+      const { name, cpf} = this.state;
+
+      this.changeToken(name, cpf)
       return(
           <div className="entrar-button">
           <Link to="/list-products" className="entrar-button-text">
@@ -80,7 +104,7 @@ class SingUp extends React.Component {
           </Link>
           </div>
         
-        );
+      );
     }
   }
 
@@ -89,7 +113,7 @@ class SingUp extends React.Component {
 
      this.listClients()
 
-     const { name, cpf } = this.state;
+     const { name, cpf, id } = this.state;
 
      this.verifyLogin(name, cpf)
 
@@ -99,10 +123,12 @@ class SingUp extends React.Component {
       }
 
      else if (!this.loginExistent){
-        this.createLogin(name, cpf)
+        this.createLogin(name, cpf, id)
+        this.createBudget(name, id)
         this.setState({ aviso: "Usuáio criado" });
         this.setState({ error: " " });
         this.stateLogin = true
+        
 
       } else {
         this.setState({ error: "Usuáio existente" });
@@ -141,7 +167,7 @@ class SingUp extends React.Component {
             
               <button className="cadastrar-button" onClick={this.subimitNewLogin} type="submit">Register</button>
 
-              {this.teste()}
+              {this.showButtonLogin()}
             
           </form>
 

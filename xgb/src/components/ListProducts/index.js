@@ -12,7 +12,7 @@ export class ListProductsData extends Component {
 								<input type="checkbox"/>
 								<span>{product.name}</span>
 								<span>{product.price}</span>
-								<button>Excluir</button>
+								
 							</div>
 						);
 					})

@@ -9,20 +9,26 @@ import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
 /*Componentes*/
 import { BuildField } from '../../components/BuildField/index'
 import { ListClients } from '../../components/ListClients/index'
-import { HelloUser } from '../../components/HelloUser/index'
 
 import "./style.css"
+
+let clients = data.CLIENTS;
+let budget = data.BUDGET;
 
 class ListProducts extends React.Component {
 	
 	constructor(props){
     	super(props)
 	    	this.state = {
+
+	    	/*Nome do Produto*/
 	        name: '',
 	        price: '', 
 	        id: '',
+
 	        stateProduct: false,
-	        stateListProducts: [],
+
+	        /*Data*/
 	        products: data.PRODUCTS,
 	        budget: data.BUDGET
 
@@ -88,20 +94,55 @@ class ListProducts extends React.Component {
  		event.preventDefault();
 
  		this.setState({
- 			products: this.state.products.map(item => {
- 				if (item.id === this.state.id) {
- 					item['name'] = event.target.updateItemName.value;
- 					item['price'] = event.target.updateItemPrice.value;
+ 			products: this.state.products.map(itemProduct => {
+ 				if (itemProduct.id === this.state.id) {
+ 					itemProduct['name'] = event.target.updateItemName.value;
+ 					itemProduct['price'] = event.target.updateItemPrice.value;
 
- 					return item;
+ 					return itemProduct;
  				}
- 				return item;
+ 				return itemProduct;
  			})
 
  			
  		})
  	}
 
+ 	editBudget(prodBuy, priceBuy, myClient) {
+
+ 		const { valueNow } = this.state
+ 		this.setState({
+	 			budget: this.state.budget.map(itemBudget => {
+	 				if (itemBudget.client == myClient) {
+
+	 					itemBudget['productsClient'] = [...itemBudget['productsClient'], prodBuy]
+
+	 					itemBudget['value'] = [...itemBudget['value'], priceBuy]
+	 					
+	 					return itemBudget;
+	 				}
+	 				return itemBudget;
+	 			})
+	 			
+	 	})
+ 	}
+	onBuyProducts() {
+
+		let prodBuy = arguments[0]
+		let priceBuy = arguments[1]
+
+
+	 	this.editBudget(prodBuy, priceBuy)
+
+	 	data.CLIENTS.map((itemJson, i) => {
+			if(itemJson.token == true) {
+
+				this.editBudget(prodBuy, priceBuy, itemJson.name)
+			}
+		})
+
+
+	}
 
   	handleSubmitForm = event => { 
     	event.preventDefault();
@@ -127,34 +168,30 @@ class ListProducts extends React.Component {
 		}
 	}
 
-	/*Create - CRUD - Orçamento*/
-	onBuyProducts () {
-
-		let idBuy = arguments[0]
-		let prodBuy = arguments[1]
-		let priceBuy = arguments[2]
-
-		this.state.budget.map((bud, i) => {
-
-			if(bud.id == 1){
-				this.setState({
-				    budget: [...this.state.budget, {
-				    	id: Date.now(), 
-				    	client: bud.client, 
-				    	productsClient: [...bud.productsClient, prodBuy],
-				    	value: [...bud.value, priceBuy],
-				    	date: Date.now 
-			    	}]
-			    });
-			}
-		})
+	meuCarrinho(){
+		return(<button><Link to="/profile">Meu carrinho</Link></button>);
 	}
+
+
 
 	render(){
     	return (
 		    <>
 
-		    	
+		    	{
+						data.CLIENTS.map((itemJson, i) => {
+							if(itemJson.token == true) {
+
+								return(<h1 className="hello-user">Hello, {itemJson.name}</h1>);
+								
+							}
+						})
+
+
+				}
+
+				{this.meuCarrinho()}
+
 		        <h1 className="title-3">Choice your products and click in <span>To Buy</span></h1>
 		        <div className="form-class">
 			       	<form  onSubmit={this.handleSubmitForm}>
@@ -201,7 +238,7 @@ class ListProducts extends React.Component {
 								<td>{product.price}</td>
 								<td><button className="delete-button" onClick={this.onDeleteHandle.bind(this, product.id)}>Delete</button></td>
 								<td><button className="edit-button" onClick={this.onEditHandle.bind(this, product.id, product.name, product.price)}>Edit</button></td>
-								<button className="buy-button" onClick={this.onBuyProducts.bind(this, product.id, product.name, product.price)}>Buy this</button>
+								<button className="buy-button" onClick={this.onBuyProducts.bind(this, product.name, product.price)}>Buy this</button>
 							</tr>
 
 							
