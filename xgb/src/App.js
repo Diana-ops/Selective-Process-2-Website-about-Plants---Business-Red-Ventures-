@@ -2,11 +2,16 @@ import React from "react";
 import Routes from "./routes";
 import './App.css'
 
+import { ListClients } from './components/ListClients/index'
+
 const App = () => 
   	<div className="fundo">
-  		<a href="/signup"><img className="logo" src="logoXGB.png" alt="logo XGB" heigth="150" width="150"/></a>
+  		
 	    <div className="main-class">
 	     	<Routes />
+	     	
 	    </div>
+
+	    
     </div>
 export default App;

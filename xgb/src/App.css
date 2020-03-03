@@ -1,13 +1,11 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto+Mono:100,700&display=swap');
 .fundo {
-	display: block;
+	display: flex;
 	font-family: 'Roboto Mono';
-	height: 100vh;
-}
+	height: 90vh;
 
-.logo {
-	margin-left: 5%;
-	margin-top: 1%;
-	margin-bottom: 5%;
-}
+	margin-top: -8px;
 
+	background-image: url("./assets/fundo-2.png") ;
+
+}

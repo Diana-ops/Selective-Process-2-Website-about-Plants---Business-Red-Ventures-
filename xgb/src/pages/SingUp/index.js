@@ -17,9 +17,8 @@ import data from '../../services/json.json'
 
 /*Componentes*/
 import { BuildField } from '../../components/BuildField/index'
+
 import { ListClients } from '../../components/ListClients/index'
-
-
 
 let clients = data.CLIENTS;
 let budget = data.BUDGET;
@@ -64,14 +63,17 @@ class SingUp extends React.Component {
   createBudget = ( name, id ) => budget.push({
       "id": id,
       "client": name,
-      "productsClient": {}, 
+      "productsClient": [],
+      "value": [], 
       "date": null 
   })
 
   changeToken = (name, cpf) => clients.map((itemJson, i) => {
 
-    if(itemJson.cpf == cpf && itemJson.name == name){
+    if((itemJson.cpf == cpf && itemJson.name == name)){
       itemJson.token = true
+    } else {
+      itemJson.token = false
     }
   })
 
@@ -96,17 +98,36 @@ class SingUp extends React.Component {
 
       const { name, cpf} = this.state;
 
-      this.changeToken(name, cpf)
-      return(
-          <div className="entrar-button">
-          <Link to="/list-products" className="entrar-button-text">
-            Sing In
-          </Link>
-          </div>
-        
-      );
+      this.changeToken(name, cpf, true)
+      return( <Redirect to="/list-products"></Redirect>);
     }
   }
+
+  subimitLogin = event => { 
+     event.preventDefault();
+
+     this.listClients()
+
+     const { name, cpf, id } = this.state;
+
+     this.verifyLogin(name, cpf)
+
+     if (!name || !cpf ) {
+        this.setState({ error: "Please fill in all the data to register" });
+        this.setState({ aviso: " " });
+      }
+
+     else if (!this.loginExistent){
+        this.setState({ aviso: " " });
+        this.setState({ error: "This user still not exist. You can create a new account to carry on :)" });
+        
+
+      } else {
+        this.stateLogin = true
+        
+      }
+  };
+
 
   subimitNewLogin = event => { 
      event.preventDefault();
@@ -118,28 +139,28 @@ class SingUp extends React.Component {
      this.verifyLogin(name, cpf)
 
      if (!name || !cpf ) {
-        this.setState({ error: "Preencha todos os dados para se cadastrar" });
+        this.setState({ error: "Please fill in all the data to register" });
         this.setState({ aviso: " " });
       }
 
      else if (!this.loginExistent){
         this.createLogin(name, cpf, id)
         this.createBudget(name, id)
-        this.setState({ aviso: "Usuáio criado" });
+        this.setState({ aviso: "Congratulations, a new account was create" });
         this.setState({ error: " " });
-        this.stateLogin = true
         
 
       } else {
-        this.setState({ error: "Usuáio existente" });
+        this.setState({ error: "Ooh, this account already exist!" });
         this.setState({ aviso: " " });
-        this.stateLogin = true
       }
   };
 
   render(){
     return (
       <>
+
+
 
         
         <div className="form-clients">
@@ -165,6 +186,7 @@ class SingUp extends React.Component {
               name = "cpf"
             />
             
+              <button className="entrar-button" onClick={this.subimitLogin} type="submit">Sing In</button>
               <button className="cadastrar-button" onClick={this.subimitNewLogin} type="submit">Register</button>
 
               {this.showButtonLogin()}

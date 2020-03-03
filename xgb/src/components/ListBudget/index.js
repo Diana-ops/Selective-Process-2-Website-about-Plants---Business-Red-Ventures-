@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import './style.css'
 /*Dados*/
 import data from "../../services/json"; 
 let budget = data.BUDGET
@@ -7,56 +7,35 @@ let budget = data.BUDGET
 export const ListBudget = (props) => {
 
     let { nameUser, id } = props
-
-    const sayHello = (event) => {
-   		
-    	budget[id].productsClient.map((itemJson, i) => {
-    		if(itemJson == event) {
-    			alert(event)
-    		}
-    	})
-  	}
+    let totalPrice = 0
 
     return (
-			<>
-		{
 
-						budget[id].productsClient.map((itemJson, i) => {
+			<div className="all-budget">	
+					<h2 className="title-8">List of Budgets</h2>
 
-								return(
-									<>
-										
-										<td>{itemJson}</td>
-										<button onClick={sayHello(itemJson)}>Excluir compra</button>
-										
-										
-									</>
-								);
-						})
+					{ 
+						budget[id].productsClient.map((produto, i) => {
+							return(
+								<div style={{padding: "3%", margin: "3%",backgroundColor: "rgb(240,240,240)"}} className="all-products"> 
+									<td >{produto}</td>
+								</div>
+							); 
+						}) 
+					}
 
+					{ 
+					budget[id].value.map((produto, i) => {
+							totalPrice = totalPrice + Number(produto)
+						}) 
+					}
 
-						
-			}
-
-					{
-
-						budget[id].value.map((itemJson, i) => {
-
-								return(
-									<>
-										
-										<td>{itemJson}</td>
-										
-										
-										
-									</>
-								);
-						})
-
-
-						
-			}
-
-			</>
-        );
+					<div className="info-date-price">
+							<td>Devery Day: {budget[id].date}</td>
+							<br/>
+							<td>Total payable: $ {totalPrice.toFixed(2)}</td>
+					</div>
+				
+			</div>
+    );
 }

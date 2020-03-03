@@ -77,42 +77,42 @@
       "client": "Diana Regina", 
       "productsClient": [], 
       "value": [],
-      "date": null 
+      "date": " " 
     }, 
     {
       "id": 2, 
       "client": "Guilherme Loca", 
       "productsClient": [],
       "value": [],
-      "date": null 
+      "date": " " 
    },
    {
       "id": 3, 
       "client": "Thiago Moura",
       "productsClient": [],
       "value": [],
-      "date": null
+      "date": " " 
   },
   {
       "id": 4, 
       "client": "Giovani Ferrari",
       "productsClient": [],
       "value": [],
-      "date": null
+      "date": " " 
   },
   {
       "id": 5,
       "client": "Beatriz Leono",
       "productsClient": [],
       "value": [],
-      "date": null
+      "date": " " 
   },
   {
       "id": 6, 
       "client": "Dean Ivatchkovitoh",
       "productsClient":[],
       "value": [],
-      "date": null
+      "date": " " 
   }
 ]
 }

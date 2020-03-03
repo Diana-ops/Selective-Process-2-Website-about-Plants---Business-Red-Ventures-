@@ -11,6 +11,8 @@ import { BuildField } from '../../components/BuildField/index'
 import { ListClients } from '../../components/ListClients/index'
 
 import "./style.css"
+import "./styleButtons.css"
+import "./styleForm.css"
 
 let clients = data.CLIENTS;
 let budget = data.BUDGET;
@@ -30,8 +32,10 @@ class ListProducts extends React.Component {
 
 	        /*Data*/
 	        products: data.PRODUCTS,
-	        budget: data.BUDGET
+	        budget: data.BUDGET,
 
+	        showFormEditProduct: false,
+	        showFormCreateProduct: false
 	      }
   	}
 
@@ -40,10 +44,21 @@ class ListProducts extends React.Component {
 
   	/*Busca o nome do produto inserido pelo usuário*/
 	verifyProduct = (name, price) => this.state.products.map((product, i) => {
-		if(name == product.name) {
+		if((name == product.name) && (price == product.price)) {
 			this.stateProduct = true
 		}
 	})
+
+	putNewDateInBudget() {
+    	var today = new Date();
+		var day = String(today.getDate()).padStart(2, '0');
+		var mouth = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+		var year = today.getFullYear();
+
+		today = day + '/' + mouth + '/' + year;
+
+		return today
+	}
   	
 
 
@@ -62,21 +77,25 @@ class ListProducts extends React.Component {
 
  	/*Update - CRUD - Products*/
  	renderEditForm() {
+ 		if(this.state.showFormEditProduct){
+	 		return(
+	 			<div className="form-edit-product">
+	 				
+	 				<form onSubmit={this.onUpdateHandle.bind(this)}>
+	 					<h1 className="title-6">Edit this project</h1>
 
- 		return(
- 			<div className="form-edit-product">
- 				<form onSubmit={this.onUpdateHandle.bind(this)}>
- 					<h1 className="title-6">Edit this project</h1>
+	 					<h3>New Name:</h3>
+	 					<input type="text" className="item-name"name="updateItemName" defaultValue={this.state.name}/>
+	 					
+	 					<h3>New Price:</h3>
+	 					<input type="text" className="item-price"name="updateItemPrice" defaultValue={this.state.price}/>
 
- 					<h3>New Name of Product:</h3>
- 					<input type="text" className="item-name"name="updateItemName" defaultValue={this.state.name}/>
- 					
- 					<h3>New Price of Product:</h3>
- 					<input type="text" className="item-price"name="updateItemPrice" defaultValue={this.state.price}/>
- 					<button className="update-add-item">It is great for me!</button>
- 				</form>
- 			</div>
- 		);	
+	 					<button className="update-add-item">It is great for me!</button>
+	 					<button className="button-close" onClick={this.downVariableEdit.bind(this)}>Close this card</button>
+	 				</form>
+	 			</div>
+	 		);	
+ 		}
  	}
 
  	onEditHandle(event) {
@@ -86,6 +105,11 @@ class ListProducts extends React.Component {
  			name: arguments[1],
  			price: arguments[2]
  		});
+
+
+		this.setState({
+			showFormEditProduct: true
+		})
 
  		
  	}
@@ -118,6 +142,8 @@ class ListProducts extends React.Component {
 	 					itemBudget['productsClient'] = [...itemBudget['productsClient'], prodBuy]
 
 	 					itemBudget['value'] = [...itemBudget['value'], priceBuy]
+
+	 					itemBudget['date'] = this.putNewDateInBudget()
 	 					
 	 					return itemBudget;
 	 				}
@@ -144,8 +170,11 @@ class ListProducts extends React.Component {
 
 	}
 
+
   	handleSubmitForm = event => { 
     	event.preventDefault();
+
+    	this.stateProduct = false
 
     	const { name, price } = this.state;
 
@@ -158,7 +187,7 @@ class ListProducts extends React.Component {
 
     				/*Create - CRUD - Products*/
     				this.setState({
-    					products: [...this.state.products, {id: Date.now(), price: price, name: name }]
+    					products: [...this.state.products, {id: Date.now(), price: price, name: name}]
     				});
       			
     		} else if (this.stateProduct){
@@ -168,15 +197,73 @@ class ListProducts extends React.Component {
 		}
 	}
 
-	meuCarrinho(){
-		return(<button><Link to="/profile">Meu carrinho</Link></button>);
+	myShopping(){
+		return(<button className="button-go-to-profile"><Link to="/profile">My Shopping Cart</Link></button>);
 	}
 
+	backToLogin(){
+		return(<button className="button-back-to-login"><Link to="/signup">Back to Login</Link></button>);
+	}
+
+
+	formProductCreate() {
+
+		if(this.state.showFormCreateProduct){
+			return(
+					<div className="form-class">
+
+				       	<form onSubmit={this.handleSubmitForm}>
+				       	
+				        	<h2 className="title-4">Post a new product!</h2>
+
+					          <BuildField 
+					            title={"Name:"} 
+					            value={this.state.name} 
+					            handleChange={this.handleChange}
+					            name = "name"
+					          />
+
+					          <BuildField 
+					            title={"Price: "} 
+					            value={this.state.price} 
+					            handleChange={this.handleChange}
+					            name = "price"
+					            placeholder={"$"}
+					          />
+
+				        <button type="submit" className="create-product">Create this project!</button>
+				        <button className="button-close-2" onClick={this.downVariableCreate.bind(this)}>Close this card</button>
+				        </form>
+				    </div>
+			);
+			}
+	}
+
+	setVariableCreate(event){
+		this.setState({
+			showFormCreateProduct: true
+		})
+	}
+
+	downVariableCreate() {
+		this.setState({
+			showFormCreateProduct: false
+		})
+	}
+
+	downVariableEdit() {
+		this.setState({
+			showFormEditProduct: false
+		})
+	}
 
 
 	render(){
     	return (
 		    <>
+
+		    	{this.backToLogin()}
+				{this.myShopping()}
 
 		    	{
 						data.CLIENTS.map((itemJson, i) => {
@@ -190,32 +277,15 @@ class ListProducts extends React.Component {
 
 				}
 
-				{this.meuCarrinho()}
+			
 
 		        <h1 className="title-3">Choice your products and click in <span>To Buy</span></h1>
-		        <div className="form-class">
-			       	<form  onSubmit={this.handleSubmitForm}>
-			        	<h2 className="title-4">Post a new product!</h2>
 
-				          <BuildField 
-				            title={"Name:"} 
-				            value={this.state.name} 
-				            handleChange={this.handleChange}
-				            name = "name"
-				          />
+		        <button className="button-create-prod" onClick={this.setVariableCreate.bind(this)}>Create new Product</button>
+		        
 
-				          <BuildField 
-				            title={"Price: "} 
-				            value={this.state.price} 
-				            handleChange={this.handleChange}
-				            name = "price"
-				            placeholder={"$"}
-				          />
-
-			        <button type="submit" className="create-product">Create a new project!</button>
-			        </form>
-			    </div>
-
+		        { this.formProductCreate() }
+		        { this.renderEditForm() }
 		        
 		        
 		       <div className="list-products">
@@ -232,13 +302,13 @@ class ListProducts extends React.Component {
 						return (
 							<>
 
-							<tr key={product.id}>
+							<tr key={product.id} className="table-products" >
 								
 								<td>{product.name}</td>
 								<td>{product.price}</td>
 								<td><button className="delete-button" onClick={this.onDeleteHandle.bind(this, product.id)}>Delete</button></td>
 								<td><button className="edit-button" onClick={this.onEditHandle.bind(this, product.id, product.name, product.price)}>Edit</button></td>
-								<button className="buy-button" onClick={this.onBuyProducts.bind(this, product.name, product.price)}>Buy this</button>
+								<td><button className="buy-button" onClick={this.onBuyProducts.bind(this, product.name, product.price)}>Buy this</button></td>
 							</tr>
 
 							
@@ -247,8 +317,7 @@ class ListProducts extends React.Component {
 					})
 				}
             </div>
-            
-            {this.renderEditForm()}
+           
 
 
 		    </>
