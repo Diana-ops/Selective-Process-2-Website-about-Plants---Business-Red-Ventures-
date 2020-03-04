@@ -1,3 +1,16 @@
+## What is the App? 
+
+## Pages
+
+## Json/MockData
+
+## To run App
+
+## Resources
+
+- React
+- React Rout
+
 ## CRUD 
 
 ### Clients
