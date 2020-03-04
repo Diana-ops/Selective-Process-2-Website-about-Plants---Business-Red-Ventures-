@@ -12,6 +12,37 @@ The goal is develop a frontend application able to do a CRUD for to client, prod
 
 ## Json/MockData
 
+```
+{
+ 	"PRODUCTS": [ 
+	    {
+	      "id": 1,
+	      "price": 199.99,
+	      "name": "Nexus 7"
+	    } 
+	],
+
+	"CLIENTS" : [
+	    {
+	      "id": 1,
+	      "cpf": "50721843915",
+	      "name": "Diana Regina",
+	      "token": false
+	    }
+	],
+
+	"BUDGET" : [
+	    {
+	      "id": 1, 
+	      "client": "Diana Regina", 
+	      "productsClient": [], 
+	      "value": [],
+	      "date": " " 
+	    }
+	]
+}
+```
+
 ## To run App
 
 ## Resources
