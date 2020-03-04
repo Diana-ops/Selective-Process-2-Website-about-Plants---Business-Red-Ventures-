@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
 
 import SingUp from './pages/SingUp/index'
 import ListProducts from './pages/ListProducts/index'
@@ -13,7 +13,7 @@ const Routes = () => (
       <Route exact path="/list-products" component={ListProducts} />
       <Route exact path="/profile" component={Profile} />
 
-      <Route path="*" component={() => <h1>Page not found</h1>} />
+      <Route path="*" component={() => <h1>Sorry, page not found</h1>} />
     </Switch>
   </BrowserRouter>
 );

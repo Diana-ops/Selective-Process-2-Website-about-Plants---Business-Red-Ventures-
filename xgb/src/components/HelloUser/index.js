@@ -1,9 +1,24 @@
 import React from 'react';
+import data from '../../services/json.json'
 
-export const HelloUser = (props) => {
-    const { nameUser } = props
+let clients = data.CLIENTS
 
-     return (
-      <h1 className="hello-user">Hello, {nameUser}</h1>
-    );
+export class HelloUser extends React.Component {
+
+	render(){
+		return(
+			<>
+			     {
+					clients.map((itemJson, i) => {
+						if(itemJson.token === true) {
+
+							return(<h1 className="hello-user">Hello, {itemJson.name}</h1>);
+											
+						}
+					})
+				}
+			</>
+   
+		);
+	}    
 }

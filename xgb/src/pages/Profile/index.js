@@ -1,11 +1,11 @@
 import React from 'react';
 
 /*Rotas*/
-import { Link, withRouter } from "react-router-dom";
-import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
+import { Link, withRouter, Redirect } from "react-router-dom";
 
 /*Componentes*/
 import { ListBudget } from '../../components/ListBudget/index'
+import { HelloUser } from '../../components/HelloUser/index'
 
 /*Dados*/
 import data from "../../services/json"; 
@@ -13,7 +13,6 @@ import data from "../../services/json";
 import "./style.css"
 
 let client = data.CLIENTS;
-let budget = data.BUDGET;
 
 class Profile extends React.Component {
 
@@ -26,7 +25,6 @@ class Profile extends React.Component {
     		cpfClient: "",
 
     		/*Data*/
-	        budget: data.BUDGET,
 	        client: data.CLIENTS,
 
 	        backToLogin: false,
@@ -44,7 +42,7 @@ class Profile extends React.Component {
 	findClient() {
 
 		client.map((itemClient, i) => {
-			if(itemClient.token == true) {
+			if(itemClient.token === true) {
 				this.setState({
      				myClient: itemClient.name, idClient: itemClient.id - 1, cpfClient: itemClient.cpf
     			});
@@ -117,7 +115,7 @@ class Profile extends React.Component {
 
  		this.setState({
  			client: this.state.client.filter(itemUser => {
- 				if (itemUser.name == name) {
+ 				if (itemUser.name === name) {
  					
  					this.setState({
  						backToLogin: true
@@ -136,7 +134,7 @@ class Profile extends React.Component {
 
  	afterDeleteHandle() {
 
- 		if(this.state.backToLogin == true) {
+ 		if(this.state.backToLogin === true) {
 
  			alert(`Your cont was deleted. The section will be return.`)
  			return(
@@ -154,23 +152,13 @@ class Profile extends React.Component {
 				<h1 class="title-7">Profile</h1>
 
 				
-				{
-						client.map((itemJson, i) => {
-							if(itemJson.token == true) {
-
-								return(<h1 className="hello-user-profile">Hello, {itemJson.name}</h1>);
-								
-							}
-						})
-
-
-				}
+				<HelloUser />
 
 				{
 
 					this.state.client.map((item, i) => {
 
-						if(item.token == true) {
+						if(item.token === true) {
 							return (
 								<>
 
@@ -194,8 +182,6 @@ class Profile extends React.Component {
 				{ this.onEditHandleName() }
 
 				{ this.afterDeleteHandle() }
-
-				
 
 				<ListBudget nameUser={this.state.myClient} id={this.state.idClient}/>
 

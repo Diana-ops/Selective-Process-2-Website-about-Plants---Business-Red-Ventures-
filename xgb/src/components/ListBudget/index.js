@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './style.css'
 /*Dados*/
 import data from "../../services/json"; 
@@ -6,7 +6,7 @@ let budget = data.BUDGET
 
 export const ListBudget = (props) => {
 
-    let { nameUser, id } = props
+    let { id } = props
     let totalPrice = 0
 
     return (

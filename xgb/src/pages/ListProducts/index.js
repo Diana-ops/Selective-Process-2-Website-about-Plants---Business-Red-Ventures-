@@ -4,18 +4,14 @@ import data from '../../services/json.json'
 
 /*Rotas*/
 import { Link, withRouter } from "react-router-dom";
-import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
 
 /*Componentes*/
 import { BuildField } from '../../components/BuildField/index'
-import { ListClients } from '../../components/ListClients/index'
+import { HelloUser } from '../../components/HelloUser/index'
 
 import "./style.css"
 import "./styleButtons.css"
 import "./styleForm.css"
-
-let clients = data.CLIENTS;
-let budget = data.BUDGET;
 
 class ListProducts extends React.Component {
 	
@@ -44,7 +40,7 @@ class ListProducts extends React.Component {
 
   	/*Busca o nome do produto inserido pelo usuário*/
 	verifyProduct = (name, price) => this.state.products.map((product, i) => {
-		if((name == product.name) && (price == product.price)) {
+		if((name === product.name) && (price === product.price)) {
 			this.stateProduct = true
 		}
 	})
@@ -134,10 +130,9 @@ class ListProducts extends React.Component {
 
  	editBudget(prodBuy, priceBuy, myClient) {
 
- 		const { valueNow } = this.state
  		this.setState({
 	 			budget: this.state.budget.map(itemBudget => {
-	 				if (itemBudget.client == myClient) {
+	 				if (itemBudget.client === myClient) {
 
 	 					itemBudget['productsClient'] = [...itemBudget['productsClient'], prodBuy]
 
@@ -161,7 +156,7 @@ class ListProducts extends React.Component {
 	 	this.editBudget(prodBuy, priceBuy)
 
 	 	data.CLIENTS.map((itemJson, i) => {
-			if(itemJson.token == true) {
+			if(itemJson.token === true) {
 
 				this.editBudget(prodBuy, priceBuy, itemJson.name)
 			}
@@ -265,20 +260,7 @@ class ListProducts extends React.Component {
 		    	{this.backToLogin()}
 				{this.myShopping()}
 
-		    	{
-						data.CLIENTS.map((itemJson, i) => {
-							if(itemJson.token == true) {
-
-								return(<h1 className="hello-user">Hello, {itemJson.name}</h1>);
-								
-							}
-						})
-
-
-				}
-
-			
-
+				<HelloUser />
 		        <h1 className="title-3">Choice your products and click in <span>To Buy</span></h1>
 
 		        <button className="button-create-prod" onClick={this.setVariableCreate.bind(this)}>Create new Product</button>

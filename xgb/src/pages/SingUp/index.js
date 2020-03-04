@@ -9,8 +9,7 @@ import React from 'react';
 import "./style.css"
 
 /*Rotas*/
-import { Link, withRouter } from "react-router-dom";
-import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
+import { Redirect, withRouter } from 'react-router-dom';
 
 /*Dados JSON*/
 import data from '../../services/json.json'
@@ -45,7 +44,7 @@ class SingUp extends React.Component {
 
   /*Busca CPF inserido pelo usuário*/
   verifyLogin = (name, cpf) => clients.map((itemJson, i) => {
-    if(itemJson.cpf == cpf && itemJson.name == name){
+    if(itemJson.cpf === cpf && itemJson.name === name){
       this.loginExistent = true
     } 
     
@@ -70,7 +69,7 @@ class SingUp extends React.Component {
 
   changeToken = (name, cpf) => clients.map((itemJson, i) => {
 
-    if((itemJson.cpf == cpf && itemJson.name == name)){
+    if((itemJson.cpf === cpf && itemJson.name === name)){
       itemJson.token = true
     } else {
       itemJson.token = false
@@ -108,7 +107,7 @@ class SingUp extends React.Component {
 
      this.listClients()
 
-     const { name, cpf, id } = this.state;
+     const { name, cpf } = this.state;
 
      this.verifyLogin(name, cpf)
 
