@@ -119,3 +119,7 @@ Is possible to see the response of local request acessing http://localhost:3000/
 :memo: I can't **update** the budget
 
 :memo: I can't **delete** the budget
+
+If you can and wanted give me some **feedback** about my project or README.md, send me a **Pull Requests**. Advices are many welcome and constructive for me :smile:
+
+Give me a **Star** if this project help or inspired you somehow :star:
