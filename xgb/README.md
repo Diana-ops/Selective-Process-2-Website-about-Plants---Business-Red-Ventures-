@@ -1,6 +1,14 @@
 ## What is the App? 
 
+The goal is develop a frontend application able to do a CRUD for to client, products, budget and to build a interface thinking in UI/UX and responsivity. 
+
 ## Pages
+
+- SingUp: In this page the user can register a new client, acesses your accont and to see a list with other clients already registers
+
+- ListProducts: In this page the user can create new products, edit some product existent, see the list of products and to delete and to buy it.
+
+- Profile: In this page the user can to see each budget, delete your account and edit your name and CPF. 
 
 ## Json/MockData
 
@@ -15,13 +23,13 @@
 
 ### Clients
 
-:heavy_check_mark: I got it **create** new clients in Login page (register)
+:heavy_check_mark: I got it **create** new clients in SingUp page (register)
 
-:heavy_check_mark: I got it **read** the informations about the client as name and CPF in login and Profile page
+:heavy_check_mark: I got it **read** the informations about the client as name and CPF in SingUp and Profile page
 
 :heavy_check_mark: I got it **update** the informations about client as name and CPF in Profile page
 
-:heavy_check_mark: I partially succeeded **delete** the client of JSON, _but_ when the user return to Login page, your profile is still active 
+:heavy_check_mark: I partially succeeded **delete** the client of JSON, _but_ when the user return to SingUp page, your profile is still active 
 
 ### Products
 
