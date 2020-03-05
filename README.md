@@ -9,10 +9,17 @@
 - *Resources*: HTML, CSS, JS and API
 - Not responsive, no frameworks 
 
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/46378210/72853358-ea78da00-3c8f-11ea-9388-df008cc4faa9.png"/>
+</p>
+
 <hr>
 
-- [X] [xGB](https://xgb.com.br/) -[Customer and Product Management](https://github.com/Diana-ops/selectiveProcesses-lisf-of-projects/tree/master/xgb)
+- [X] [xGB](https://xgb.com.br/) - [Customer and Product Management](https://github.com/Diana-ops/selectiveProcesses-lisf-of-projects/tree/master/xgb)
 
 - *The Project*: frontend application for to do a CRUD of clients, projects and budgets  
 - *Resources/Frames*: React 
 - Responsive 
+
+![layoutMobile](https://user-images.githubusercontent.com/46378210/75941390-4d07ed00-5e6e-11ea-9696-c39ee11bea3d.png)
+
