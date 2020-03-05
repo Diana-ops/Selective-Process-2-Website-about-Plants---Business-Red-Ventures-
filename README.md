@@ -5,10 +5,14 @@
 <hr>
 
 - [X] [Red Ventures](https://www.redventures.com/) - [Plants](https://github.com/Diana-ops/selectiveProcesses-lisf-of-projects/tree/master/red-venturess)
-- *The project:* frontend application for choice plants based in amount of sun, frequency of drainage and if there are or not a pet
+- *The Project:* frontend application for choice plants based in amount of sun, frequency of drainage and if there are or not a pet
 - *Resources*: HTML, CSS, JS and API
 - Not responsive, no frameworks 
 
 <hr>
 
-- [ ] [xGB](https://xgb.com.br/) -[Customer and Product Management](https://github.com/Diana-ops/selectiveProcesses-lisf-of-projects/tree/master/xgb)
+- [X] [xGB](https://xgb.com.br/) -[Customer and Product Management](https://github.com/Diana-ops/selectiveProcesses-lisf-of-projects/tree/master/xgb)
+
+- *The Project*: frontend application for to do a CRUD of clients, projects and budgets  
+- *Resources/Frames*: React 
+- Responsive 
