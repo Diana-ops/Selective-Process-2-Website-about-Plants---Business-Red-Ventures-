@@ -51,24 +51,10 @@ Clone this project:
 git clone "https://github.com/Diana-ops/selectiveProcesses-lisf-of-projects/tree/master/xgb"
 ```
 
-> It is necessary to have the files of directory **node_modules** (I don't put in here because are many files) :grimacing:
-
-You can to have this dependencies creating a new project with React:
+Install dependeces and run with:
 
 ```
-$ yarn create react-app <name_directory>
-```
-For install React Routes, execute:
-
-```
-$ yarn add react-router-dom
-```
-
-So, move **node_modules** to "form/" directory
-
-With the dependencies create, just run application with:
-
-```
+$ yarn install
 $ cd src
 $ yarn start
 ```
